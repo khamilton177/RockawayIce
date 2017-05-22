@@ -1,0 +1,48 @@
+
+  <%= form_tag("/events", method: "request_event") do %>
+  <p>
+    <%= label_tag(:email, "Email:") %>
+    <%= email_field(:email, "") %>
+  </p>
+  <p>
+    <%= label_tag(:phone, "Phone Number:") %>
+    <%= text_field_tag(:phone, "") %>
+  </p>
+  <p>
+    <%= label_tag(:fname, "First Name:") %>
+    <%= text_field_tag(:fname, "") %>
+  </p>
+  <p>
+    <%= label_tag(:lname, "Last Name:") %>
+    <%= text_field_tag(:lname, "") %>
+  </p>
+  <p>
+    <%= label_tag(:date, "Event Date:") %>
+    <%= date_field(:date, "") %>
+  </p>
+  <p>
+    <%= label_tag(:desc, "Please describe event:") %>
+  </p>
+  <p>
+    <%= text_area_tag(:desc, "", size: "75x10") %>
+  </p>
+  <p>
+    <%= label_tag(:loc, "Event Location:") %>
+    <%= text_field_tag(:loc, "") %>
+  </p>
+  <p>What type of packages are of interest to you?
+    <%= check_box_tag(:ices) %>
+    <%= label_tag(:ices, "Rockaway Ice Lady") %>
+    <%= check_box_tag(:fire) %>
+    <%= label_tag(:fire, "Fire and Ice") %>
+  </p>
+  <p>
+  </p>
+  <p>
+  </p>
+  <p>
+  </p>
+    <%= submit_tag("Submit") %>
+
+  <% end %>
+</div>

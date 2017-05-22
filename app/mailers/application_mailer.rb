@@ -1,7 +1,7 @@
 class ApplicationMailer < ActionMailer::Base
   require 'sendgrid-ruby'
-  require 'json'
   include SendGrid
+  require 'json'
 
   default from: "kerryjae@gmail.com"
   layout 'mailer'
