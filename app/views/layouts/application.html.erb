@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RockawayIce</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <header>
+    <div id="lay_container">
+  <header class="lay_header">
+    <nav id="lay_nav">
+      <button id="logo" href="/"></button>
+        <%= link_to("Subscribe", new_contact_path, id: "lay_sub", class: "layBtn") %>
+        <div class="lay_drop_cnt">
+          <a id="lay_menu">Menu</a>
+          <div class="lay_drop_dwn">
+            <a class="lay_drop_lnks" href="/>">Where's Nae</a>
+            <a class="lay_drop_lnks" href="/">Book an Event</a>
+            <%= link_to("Favorite Flavor Friday", root_path, method: :get, id: "lay_up", class: "lay_drop_lnks") %>
+            <a class="lay_drop_lnks" href="/">Gallery</a>
+          </div>
+        <div>
+    </nav>
+  </header>
+  <body>
+    <%= yield %>
+    <!-- Using Boostrap Modal styling but calling custom javascript code -->
+    <div id="subModal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="noThx close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Subscribe to be in the know</h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="noThx btn btn-default">No Thanks</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+  <footer>
+    <hr>
+  </footer>
+</html>

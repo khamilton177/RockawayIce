@@ -1,0 +1,22 @@
+<div id="cnt_sub_f">
+  <% if @contact.errors.full_messages.any? %>
+    <ul id="cnt_sub_err">
+      <% @contact.errors.full_messages.each do |error_message| %>
+      <li><%= error_message %>
+      </li> <br />
+      <% end %>
+    </ul>
+  <% end %>
+  <%= form_for @contact do |f| %>
+    <p>
+      <%= f.text_field :first_name, placeholder: "First Name" %>
+    </p>
+    <p>
+      <%= f.email_field :email, placeholder: "you@somewhere.com" %>
+    </p>
+    <p>
+      <%= f.text_field :mobile, placeholder: "10 digit mobile #" %>
+    </p>
+    <%= f.submit %>
+  <% end %>
+</div>
