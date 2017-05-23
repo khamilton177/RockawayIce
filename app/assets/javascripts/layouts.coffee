@@ -28,10 +28,12 @@
   }
 
   // Launching modal
-   comment_saveBtn.addEventListener("click", function(){
-     event.preventDefault();
-     subModal.style.display="block";
-    //  subModal.style.z-index="1050";
-     subModal.style.opacity="1";
-   })
+  if (comment_saveBtn != null){
+    comment_saveBtn.addEventListener("click", function(){
+      event.preventDefault();
+      subModal.style.display="block";
+      //  subModal.style.z-index="1050";
+      subModal.style.opacity="1";
+    })
+  }
  })`

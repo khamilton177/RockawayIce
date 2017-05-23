@@ -1,0 +1,10 @@
+<div>
+
+<h3>Unsubscribe <%= @contact.email %></h3>
+
+<h5>Sorry to see you go.</h5>
+<p>Please verify that you want to remove <%= @contact.email %> from our mailing list</>
+
+  <%= link_to("Submit", unsubscribe_contact_path(@contact), method: :patch) %>
+
+</div>

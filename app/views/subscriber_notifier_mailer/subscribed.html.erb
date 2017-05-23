@@ -8,10 +8,12 @@
   </head>
   <body>
     <h1>Welcome <%= @contact.first_name %>!</h1>
-    <p><%= @content %></p>
-    <BR>
+    <p>Get ready to receive info on latest promos, events, and flavors.  If you woud like to 'Unsubscribe', please click the link below-</p>
     <BR>
     <p><%= @signature %></p>
+    <BR>
+    <BR>
+    <p>http://localhost:3000/contacts/<%= @contact.id %>/unsubscribe</p>
   </body>
 </html>
 

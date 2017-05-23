@@ -4,6 +4,11 @@ class ContactsController < ApplicationController
   require 'json'
   include SendGrid
 
+  def index
+  end
+
+  def show
+  end
 
   def new
     @contact = Contact.new
@@ -24,13 +29,35 @@ class ContactsController < ApplicationController
       end
       unless @contact.email.nil? || @contact.email == ""
         @welcome="Thanks for subscribing to RockawayIceLady!"
-        @body="Get ready to receive info on latest promos, events, and flavors.  If you woud like to 'Unsubscribe', please click the link below-"
+        # Generate a 6 digit random number to confirm 'Unsubscribes'
+        @unsub_conf_key=100_000 + Random.rand(1_000_000 - 100_000)
+        @body="Get ready to receive info on latest promos, events, and flavors.  If you woud like to 'Unsubscribe', please click the link below-\n \n http://localhost:3000/contacts/#{@contact.id}/unsubscribe_form \n
+        You need to supply this confirmation code- #{@unsub_conf_key}, to unsubscribe."
         SubscriberNotifierMailer.subscribed(@contact, @welcome, @body).deliver_now
       end
       redirect_to "/"
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def unsubscribe_form
+    @contact=Contact.find(params[:id])
+  end
+
+  def unsubscribe
+    @contact=Contact.find(params[:id])
+    puts "I'm here!"
+    redirect_to "/"
+  end
+
+  def update
+  end
+
+  def destroy
   end
 
   private
