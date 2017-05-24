@@ -1,5 +1,5 @@
 
-  <%= form_tag("/events", method: "request_event") do %>
+  <%= form_tag("/events", id: "event_form", class: "evt_f", method: :post) do %>
   <p>
     <%= label_tag(:email, "Email:") %>
     <%= email_field(:email, "") %>

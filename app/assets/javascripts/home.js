@@ -5,7 +5,7 @@
 document.addEventListener("DOMContentLoaded", function(){
   var slides = document.querySelectorAll('#slides .slide');
   var currentSlide = 0;
-  var slideInterval = setInterval(nextSlide,2000);
+  var slideInterval = setInterval(nextSlide,4000);
 
     function nextSlide() {
       if (slides.length > 0){
