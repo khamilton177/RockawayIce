@@ -27,7 +27,7 @@ class ContactsController < ApplicationController
         @welcome="Welcome #{@contact.first_name}!  Now you'll receive info on latest promos, events, and flavors.  Please reply 'STOP' if you did not make this request."
         @media=""
         # call Twilio API method to send welcome SMS to new subscriber
-        # add_cnt_notifyM(subscriberM, @welcome, @media)
+        add_cnt_notifyM(subscriberM, @welcome, @media)
       end
       # Build message for SendGrid API is subscriber supplied email
       unless @contact.email.nil? || @contact.email == ""
@@ -37,7 +37,7 @@ class ContactsController < ApplicationController
         @body="Get ready to receive info on latest promos, events, and flavors.  If you woud like to 'Unsubscribe', please click the link below-\n \n http://localhost:3000/contacts/#{@contact.id}/unsubscribe_form \n
         You need to supply this confirmation code- #{@unsub_conf_key}, to unsubscribe."
         # call mailer method to send welcome email to new subscriber via SendGrid
-        SubscriberNotifierMailer.subscribed(@contact, @welcome, @body).deliver_now
+        # SubscriberNotifierMailer.subscribed(@contact, @welcome, @body).deliver_now
       end
       redirect_to "/"
     else
@@ -68,9 +68,15 @@ class ContactsController < ApplicationController
 
     def add_cnt_notifyM(subscriberM, welcome, media)
       # Get your Account Sid and Auth Token from twilio.com/user/account
+      # Test Account
       account_sid = ENV['TEST_TWIL_SID']
       auth_token = ENV['TEST_TWIL_TKN']
       bus_txt_num = '+15005550006'
+
+      # Prod Account
+      # account_sid = ENV['TWIL_SID']
+      # auth_token = ENV['TWIL_TKN']
+      # bus_txt_num = '+13476190204'
       # http_basic_authenticate_with username: account_sid, password: auth_token, except: :index
 
       # set up a client to talk to the Twilio REST API
@@ -78,10 +84,10 @@ class ContactsController < ApplicationController
 
       # create message
       message=@twilclient.account.messages.create({
-        from: bus_txt_num,
         to: subscriberM,
-        body: welcome,
-        # media_url: media,
+        from: bus_txt_num,
+        body: welcome
+        # media_url: media
       })
       puts "MSG SID- #{message.sid}"
       puts "MSG To- #{message.to}"

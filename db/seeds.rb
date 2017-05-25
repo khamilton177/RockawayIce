@@ -47,6 +47,16 @@
 #     { name: "Key Lime Pie", category_id: "2" }
 #   ])
 
+# Location.create([
+#   { address: "7600 Dayton Tower, Far Rockaway, NY", notes: "Pool" },
+#   { address: "7800 Dayton Tower, Far Rockaway, NY", notes: "Pool" },
+#   { address: "79 St. and Shore Front Blvd., Far Rockaway, NY", notes: "Handball Court" },
+#   { address: "83 St. and Shore Front Blvd., Far Rockaway, NY", notes: "Basketball Court" },
+#   { address: "84 St. and Shore Front Blvd., Far Rockaway, NY", notes: "Park" },
+#   { address: "90 St. and Shore Front Blvd., Far Rockaway, NY", notes: "" },
+#   { address: "98 St. and Shore Front Blvd., Far Rockaway, NY", notes: "" }
+#   ])
+
 Admin.create([
   { username: "kayhami177", email: "kerryjae@gmail.com" super: "1"}
   # { username: "nae", email: "ndailey70@gmail.com" super: "0"}

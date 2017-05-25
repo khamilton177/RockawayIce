@@ -1,28 +1,34 @@
-function initMap() {
-    var uluru = {lat: 40.695857, lng: -73.7769757};
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 15,
-      center: uluru
-    });
-    var marker = new google.maps.Marker({
-      position: uluru,
-      map: map
-    });
+function initMap(){
+
+  var geoloc=new google.maps.Geocoder();
+  var logoMarker;
+  var logo = "/assets/favicon_32.png";
+
+  var blvd = {lat: 40.5839092, lng: -73.8175987};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    center: blvd
+  });
+
+  var loc=$("#map").data("locations");
+  // var tlt;
+  for(var cnt=0; cnt<loc.length; cnt++){
+    var tip=loc[cnt].notes;
+    console.log("tip "+ tip);
+    geoloc.geocode(
+      {'address': loc[cnt].address},
+      function(results, status, tip){
+        if (status == "OK"){
+          logoMarker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location,
+            icon: logo,
+            title: tip
+          });
+        } else{
+            console.log("No good"+ loc[cnt].address);
+        }
+      }
+    );
+  }
 }
-
-  //   var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-  //   var beachMarker = new google.maps.Marker({
-  //     position: {lat: -33.890, lng: 151.274},
-  //     map: map,
-  //     icon: image
-  //   });
-  // }
-
-  // var map;
-  // function initMap() {
-  //   map = new google.maps.Map(document.getElementById('map'), {
-  //     zoom: 16,
-  //     center: new google.maps.LatLng(40.695857, -73.7769757),
-  //     mapTypeId: 'roadmap'
-  //   });
-  //}
