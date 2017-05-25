@@ -4,25 +4,25 @@
     <title>RockawayIce</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/144ed3a5c7.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
+  <body class="<%= @body_class %>">
 
       <header class="lay_header">
         <nav id="lay_nav">
-          <a href="/"><button id="logo"></button></a>
+          <%= link_to("", root_path, id: "logo", class: "logo") %>
           <%= link_to("Subscribe", new_contact_path, id: "lay_sub", class: "layBtn") %>
           <div class="lay_drop_cnt">
             <a id="lay_menu">Menu</a>
             <div class="lay_drop_dwn">
               <a class="lay_drop_lnks" href="/maps/wheres_cart">Where's Nae</a>
               <a class="lay_drop_lnks" href="/events/event_form">Book an Event</a>
-              <%= link_to("Favorite Flavor Friday", root_path, method: :get, id: "lay_up", class: "lay_drop_lnks") %>
-              <a class="lay_drop_lnks" href="/">Gallery</a>
+              <%= link_to("Favorite Flavor Friday", flavors_flavor_friday_form_path, method: :get, id: "lay_up", class: "lay_drop_lnks flv_vote_btn") %>
+              <!-- <a class="lay_drop_lnks" href="/">Gallery</a> -->
             </div>
           <div>
         </nav>

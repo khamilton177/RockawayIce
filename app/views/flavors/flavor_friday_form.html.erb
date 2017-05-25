@@ -1,2 +1,31 @@
-<h1>Flavors#flavor_friday_form</h1>
-<p>Find me in app/views/flavors/flavor_friday_form.html.erb</p>
+<div class="flv_vote_cl">
+  <h1>Voting for this Friday is Closed</h1>
+  <h3>Voting resumes on Friday</h3>
+</div>
+<div>
+  <script type="text/javascript">
+    cutOffVote()
+  </script>
+
+    <%= form_tag("/flavors", id: "flavor_friday_form", class: "flv_f", method: :post) do %>
+    <h3>Votes must be in by 5:00 pm Wednesday</h3>
+
+    <div class="flv_notes">
+      ***Please select only 1 item from between the lists***
+    </div>
+    <div class="flv_div">
+      <span>Water Ices</span>
+      <%= select_tag "water", options_from_collection_for_select(@flavor_waters, "id", "name"), include_blank: true %>
+    </div>
+
+    <div class="flv_div">
+      <span>Creme Ices</span>
+      <%= select_tag "cremes", options_from_collection_for_select(@flavor_cremes, "id", "name"), include_blank: true %>
+    </div>
+
+    <p class="flv_f_btn">
+      <%= submit_tag("Submit") %>
+    </p>
+
+    <% end %>
+  </div>

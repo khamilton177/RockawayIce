@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
   var slideInterval = setInterval(nextSlide,4000);
 
     function nextSlide() {
+      // Encase attaching eventlistened in if statement to prevent js errors in console
       if (slides.length > 0){
         slides[currentSlide].className = 'slide';
         currentSlide = (currentSlide+1)%slides.length;

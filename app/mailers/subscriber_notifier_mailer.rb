@@ -35,7 +35,7 @@ class SubscriberNotifierMailer < ActionMailer::Base
     @unsub_conf_key=100_000 + Random.rand(1_000_000 - 100_000)
 
     # set up a client to talk to the SENDGRID REST API
-    from = Email.new(email: "kerryjae@gmail.com")
+    from = Email.new(email: "RockawayIceLady@gmail.com")
     subject = welcome
     to = Email.new(email: "#{@contact.email}")
     content = Content.new(type: 'text/plain', value: "#{@content}")
@@ -54,11 +54,8 @@ class SubscriberNotifierMailer < ActionMailer::Base
     @content=body
     @signature="Catch Me if You Can...Nae"
 
-    # Generate a 6 digit random number to confirm 'Unsubscribes'
-    @unsub_conf_key=100_000 + Random.rand(1_000_000 - 100_000)
-
     # set up a client to talk to the SENDGRID REST API
-    from = Email.new(email: "kerryjae@gmail.com")
+    from = Email.new(email: "RockawayIceLady@gmail.com")
     subject = welcome
     to = Email.new(email: "#{@contact.email}")
     content = Content.new(type: 'text/plain', value: "#{@content}")
@@ -72,11 +69,11 @@ class SubscriberNotifierMailer < ActionMailer::Base
     puts "Head- #{response.headers}"
   end
 
-  def event_request(subx, body)
+  def event_request(requester, subx, body)
     @content=body
 
     # set up a client to talk to the SENDGRID REST API
-    from = Email.new(email: "kerryjae@gmail.com")
+    from = requester
     subject = subx
     to = Email.new(email: "RockawayIceLady@gmail.com")
     content = Content.new(type: 'text/plain', value: "#{@content}")

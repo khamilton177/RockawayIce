@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'flavors/about'
 
   get 'flavors/flavor_friday_form'
+  post '/flavors', to: 'flavors#vote'
 
   get 'flavors/flavor_faves'
 

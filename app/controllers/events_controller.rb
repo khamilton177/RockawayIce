@@ -8,12 +8,11 @@ class EventsController < ApplicationController
 
   def request_event
     params.inspect
-    requester_email=params[:email]
+    @requester_email=params[:email]
     requester_fname=params[:fname]
     requester_lname=params[:lname]
     requester_phone=params[:phone]
     evt_date=params[:date]
-
     evt_loc=params[:loc]
     evt_desc=params[:desc]
     evt_pkg_ice=""
@@ -35,7 +34,7 @@ class EventsController < ApplicationController
                 Description- #{evt_desc}"
 
     # call mailer method to send Event Request email to RockawayIceLady via SendGrid
-    # SubscriberNotifierMailer.event_request(@subject, @body).deliver_now
+    # SubscriberNotifierMailer.event_request(@requester_email, @subject, @body).deliver_now
     redirect_to "/"
   end
 
