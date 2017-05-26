@@ -57,7 +57,7 @@
 #   { address: "98 St. and Shore Front Blvd., Far Rockaway, NY", notes: "" }
 #   ])
 
-Admin.create([
-  { username: "kayhami177", email: "kerryjae@gmail.com" super: "1"}
-  # { username: "nae", email: "ndailey70@gmail.com" super: "0"}
-])
+# Admin.create([
+#   { username: "kayhami177", email: "kerryjae@gmail.com" super: "1"}
+#   # { username: "nae", email: "ndailey70@gmail.com" super: "0"}
+# ])

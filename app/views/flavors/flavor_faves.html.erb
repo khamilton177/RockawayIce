@@ -1,2 +1,7 @@
 <h1>Flavors#flavor_faves</h1>
-<p>Find me in app/views/flavors/flavor_faves.html.erb</p>
+
+<!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+<%= content_tag "canvas", id: "myChart", width: "400", height: "400", data: {flavors: @flavors} do %>
+<% end %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"</script>

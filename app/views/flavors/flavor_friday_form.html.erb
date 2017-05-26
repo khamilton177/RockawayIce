@@ -13,6 +13,7 @@
     <div class="flv_notes">
       ***Please select only 1 item from between the lists***
     </div>
+
     <div class="flv_div">
       <span>Water Ices</span>
       <%= select_tag "water", options_from_collection_for_select(@flavor_waters, "id", "name"), include_blank: true %>

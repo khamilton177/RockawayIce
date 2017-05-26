@@ -67,3 +67,6 @@ gem "twilio-ruby"
 
 # SendGrid gem to add email support to app
 gem "sendgrid-ruby"
+
+# Charts.js gem to render chart for Flavor Friday vote_time
+# gem 'chart-js-rails'
