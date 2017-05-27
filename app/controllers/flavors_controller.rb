@@ -40,5 +40,6 @@ class FlavorsController < ApplicationController
   def flavor_faves
     @flavors=Flavor.all
     @flavors=@flavors.order(svy_vote: :desc).limit(5)
+    @first=@flavors.first
   end
 end

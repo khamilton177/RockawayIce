@@ -20,7 +20,7 @@ function cutOffVote(){
   console.log("Hour- "+ hrNow);
 
   if (fri_form != null){
-    if (dayNow >= 3 && dayNow !=6 && hrNow >= 17){
+    if ((dayNow == 3 && hrNow >= 17) || (dayNow > 3 && dayNow < 5)){
       vote_cl.style.opacity=1;
       fri_form.style.opacity=0;
       console.log("Closed");
@@ -36,7 +36,7 @@ function cutOffVote(){
 
 // Pie Chart creation for results of Friday Flavor Vote
 document.addEventListener("DOMContentLoaded", function(){
-  console.log("IM HERE");
+
   var flv=$("#myChart").data("flavors");
   var colors=[
     "#FF3AAE",
@@ -46,27 +46,33 @@ document.addEventListener("DOMContentLoaded", function(){
     "#D96C06"
   ];
 
-  var lbls=[];
-  var votes=[];
-  for(cnt=0; cnt<flv.length; cnt++){
-   lbls.push(flv[cnt].name),
-   votes.push(flv[cnt].svy_vote)
-  };
+  if (flv !== undefined){
+    Chart.defaults.global.defaultFontFamily="'Amatic SC', cursive";
+    Chart.defaults.global.defaultFontSize=18;
+    Chart.defaults.global.defaultFontColor="#B9D61A";
 
-  var options={};
-  var svy_data = {
-    labels: lbls,
-    datasets: [{
-        data: votes,
-        backgroundColor: colors,
-        hoverBackgroundColor: colors
-    }]
-  };
+    var lbls=[];
+    var votes=[];
+    for(cnt=0; cnt<flv.length; cnt++){
+     lbls.push(flv[cnt].name),
+     votes.push(flv[cnt].svy_vote)
+    };
 
-  var ctx = document.querySelector("#myChart").getContext("2d");
-  var pieChart = new Chart(ctx,{
-      type: 'pie',
-      data: svy_data,
-      options: options
-  });
+    var options={};
+    var svy_data = {
+      labels: lbls,
+      datasets: [{
+          data: votes,
+          backgroundColor: colors,
+          hoverBackgroundColor: colors
+      }]
+    };
+
+    var ctx = document.querySelector("#myChart").getContext("2d");
+    var pieChart = new Chart(ctx,{
+        type: 'pie',
+        data: svy_data,
+        options: options
+    });
+  }
 });

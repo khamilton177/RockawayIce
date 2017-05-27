@@ -2,24 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.about_cat_col{
-  display: inline-block;
+// .about_cat_col{
+//   display: inline-block;
+// }
+//
+// h1, h3, .flv_notes{
+//   text-align: center;
+// }
+//
+.flv_first{
+  color: #FF3AAE;
 }
-
-h1, h3, .flv_notes{
-  text-align: center;
-}
-
-.flv_div, .flv_f_btn{
-  display: inline-block;
-}
-
-#flavor_friday_form{
-  align-items: center;
-  opacity: 1;
-}
-
-.flv_vote_cl{
-  align-items: center;
-  opacity: 0;
-}
+//
+// .flv_div, .flv_f_btn{
+//   display: inline-block;
+// }
+//
+// #flavor_friday_form{
+//   align-items: center;
+//   opacity: 1;
+// }
+//
+// .flv_vote_cl{
+//   align-items: center;
+//   opacity: 0;
+// }
