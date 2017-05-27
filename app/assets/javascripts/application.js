@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require rails-ujs
+//  Can't use Turbolinks.  It will not refresh load for Chart to display
 // require turbolinks
-// require Chart
+//= require materialize
+//= init
 //= require_tree .

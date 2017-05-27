@@ -1,44 +1,72 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RockawayIce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Rockaway Ice Lady</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-    <script src="https://use.fontawesome.com/144ed3a5c7.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"> -->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://use.fontawesome.com/144ed3a5c7.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="<%= @body_class %>">
     <nav class="acid-green" role="navigation">
       <div class="nav-wrapper container">
-        <%= link_to("", root_path, id: "logo-container", class: "brand-logo  nav") %>
-        <div class="center hide-on-med-and-down">
-          <%= link_to("Subscribe", new_contact_path, class: "nav") %>
-          <%= link_to("Where's the Cart", maps_wheres_cart_path, class: "nav") %>
-          <%= link_to("Book an Event", events_event_form_path, class: "nav") %>
-          <%= link_to("Favorite Flavor Friday", flavors_flavor_friday_form_path, method: :get, class: "nav") %>
-          <%= link_to("Which Flavors Have the Vote", flavors_flavor_faves_path, class: "nav") %>
-        </div>
+        <%= link_to("", root_path, id: "logo-container", class: "brand-logo right nav") %>
+          <ul class="left hide-on-med-and-down">
+            <li>
+              <%= link_to("Subscribe", new_contact_path, class: "nav") %>
+            </li>
+            <li>
+              <%= link_to("Where's the Cart", maps_wheres_cart_path, class: "nav") %>
+            </li>
+            <li>
+              <%= link_to("Book an Event", events_event_form_path, class: "nav") %>
+            </li>
+            <li>
+              <%= link_to("Favorite Flavor Friday", flavors_flavor_friday_form_path, method: :get, class: "nav") %>
+            </li>
+            <li>
+              <%= link_to("Which Flavors Have the Votes", flavors_flavor_faves_path, class: "nav") %>
+            </li>
+          </ul>
+
+          <ul id="nav-mobile" class="side-nav">
+            <li>
+              <%= link_to("Subscribe", new_contact_path, class: "nav") %>
+            </li>
+            <li>
+              <%= link_to("Where's the Cart", maps_wheres_cart_path, class: "nav") %>
+            </li>
+            <li>
+              <%= link_to("Book an Event", events_event_form_path, class: "nav") %>
+            </li>
+            <li>
+              <%= link_to("Favorite Flavor Friday", flavors_flavor_friday_form_path, method: :get, class: "nav") %>
+            </li>
+            <li>
+              <%= link_to("Which Flavors Have the Vote", flavors_flavor_faves_path, class: "nav", remote: :true) %>
+            </li>
+          </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
     </nav>
       <%= yield %>
     <footer class="page-footer acid-green">
       <div class="container">
         <div class="row">
-          <div class="col s12"
-            <a href="https://www.instagram.com/rockaway_ice_lady/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
-            <a href="https://www.facebook.com/rockawayicelady/" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+          <div class="col s12 center valign-wrapper">
+            <span class="lay_foot_span white-text">Connect with Me</span>
+            <a class="lay_foot_a right valign-wrapper" href="https://www.instagram.com/rockaway_ice_lady/" target="_blank"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
+            <a class="lay_foot_a right valign-wrapper"  href="https://www.facebook.com/rockawayicelady/" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
   </body>
 </html>
