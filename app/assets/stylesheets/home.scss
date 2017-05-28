@@ -27,6 +27,30 @@
   transform: translate3d(-50%, 273px, 0px);
 }
 
+.home-welcome{
+  margin-top: 15%;
+  font-size: 60px;
+}
+
+.home-text-sz{
+  font-size: 25px;
+}
+
+#home-cart-lnk{
+  opacity: 0;
+  -webkit-animation-ease: 7s;
+}
+
+.home-cart{
+  opacity: 0;
+  -webkit-animation-duration: 7s;
+}
+
+.emph{
+  margin-right: 5px;
+  display:inline-block;
+}
+
 #slides{
   position: relative;
   width: 100%;
@@ -43,13 +67,16 @@
   margin: 0px;
   opacity: 0;
   z-index: 1;
+  color: white;
+  font-size: 60px;
+  text-align: center;
 }
 
 .slide:nth-of-type(1){
   background-color: #D96C06;
 }
 .slide:nth-of-type(2){
-  background-color: #FF3AAE;
+  background-color: #A4D789;
 }
 .slide:nth-of-type(3){
   background-color: #952DE1;

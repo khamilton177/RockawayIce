@@ -1,5 +1,13 @@
-<h1 class="flv_first"><%= @first.name %> is in the lead...Not your favorite?  Better vote!</h1>
-
-<!-- <canvas id="myChart" width="400" height="400"></canvas> -->
-<%= content_tag "canvas", id: "myChart", width: "200", height: "200", data: {flavors: @flavors} do %>
-<% end %>
+<h1 class="center flv_first">
+  <%= link_to("#{@first.name} is in the lead...Not your favorite?  Better vote!", flavors_flavor_faves_path, class: "center flv_first") %>
+</h1>
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 center">
+        <%= content_tag "canvas", id: "myChart", width: "400", height: "400", data: {flavors: @flavors} do %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

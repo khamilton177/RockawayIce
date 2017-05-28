@@ -1,42 +1,21 @@
 <div id="index-banner" class="parallax-container">
   <div class="section no-pad-bot">
     <div class="container">
-      <br><br>
-      <h1 class="header center white-text">Welcome to Rockaway Ice Lady</h1>
       <div class="row center">
-        <h4 class="header col s12 white-text">Rockaway's Home for Individually Handcrafted Italian Ices</h4>
+        <p class="center white-text home-welcome">Welcome to Rockaway Ice Lady</p>
       </div>
-      <br><br>
-<!--  There was a button in a div here  -->
     </div>
   </div>
   <div class="parallax"><%=image_tag("ice_on_cans.jpg", id: "home-cans")%></div>
 </div>
 
-
 <div class="container">
   <div class="section">
-    <!--   Icon Section   -->
     <div class="row">
-      <div class="col s12 m4">
-          <h5 class="center">Speeds up development</h5>
-          <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-      </div>
-
-      <div class="col s12 m4">
-          <div id="slides" class="col s12">
-          <p id="slid3" class="slide showing"></p>
-
-          <p id="slide" class="slide"></p>
-
-          <p id="slide" class="slide"></p>
-        </div>
-      </div>
-
-      <div class="col s12 m4">
-          <h5 class="center">Easy to work with</h5>
-          <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-        </div>
+      <div class="col s12 center acid-green-text home-text-sz">
+        <h3>Rockaway's Home for Individually Handcrafted Italian Ices</h3>
+        <p class="center-align">Unique flavors such as Arnold Palmer, Cookie Monster, Caribbean Rainbow and more!</p>
+        <p class="center-align"><h4 class="emph animated infinite bounce">Adult</h4> flavors available.</p>
       </div>
     </div>
   </div>
@@ -46,7 +25,7 @@
   <div class="section no-pad-bot">
     <div class="container">
       <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        <%= link_to("Come Explore the Flavors!", flavors_about_path, class: "parallax-nav") %>
       </div>
     </div>
   </div>
@@ -56,10 +35,10 @@
 <div class="container">
   <div class="section">
     <div class="row">
-      <div class="col s12 center">
-        <h3><i class="mdi-content-send brown-text"></i></h3>
-        <h4>Contact Us</h4>
-        <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+      <div class="col s12 center acid-green-text  home-text-sz">
+        <h3>Mouth Watering Yet???</h3>
+        <%= link_to("Find Out Where the Cart is...", maps_wheres_cart_path, id: "home-cart-lnk", class: "acid-green-text  animated") %>
+        <p class="emph home-cart-emp home-cart center-align animated">and Catch Me if You Can!</p>
       </div>
     </div>
   </div>
@@ -69,24 +48,37 @@
   <div class="section no-pad-bot">
     <div class="container">
       <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        <%= link_to("Subscribe for Special Events and Promos", new_contact_path, class: "spanish-orange-text parallax-nav") %>
       </div>
     </div>
   </div>
   <div class="parallax"><%=image_tag("bench.jpg", id: "home-bench")%></div>
 </div>
 
+
 <div class="container">
   <div class="section">
+    <!--   Icon Section   -->
     <div class="row">
-      <div class="col s12 center">
-        <h3><i class="mdi-content-send brown-text"></i></h3>
-        <h4>Contact Us</h4>
-        <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+      <div class="col s12 m2">
+      </div>
+      <div class="col s12 m8">
+          <div id="slides" class="col s12">
+
+            <p id="slide1" class="slide showing"><BR><BR><BR>Favorite Flavor Friday is Coming...</p>
+
+            <p id="slide2" class="slide"><BR><BR><BR><%= link_to("Vote for Yours Today!", flavors_flavor_friday_form_path, class: "white-text parallax-nav") %></p>
+
+            <p id="slide3" class="slide"><BR><BR><BR><%= link_to("See Which Flavors are Trending", flavors_flavor_faves_path, class: "white-text parallax-nav") %></p>
+        </div>
+      </div>
+      <div class="col s12 m2">
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 
 <div class="parallax-container valign-wrapper">
   <div class="section no-pad-bot">
@@ -115,7 +107,8 @@
   <div class="section no-pad-bot">
     <div class="container">
       <div class="row center">
-        <a href="/events/event_form" class="white-text parallax-nav">Book an Event Today!</a>
+        <%= link_to("Book an Event Today!", events_event_form_path, class: "white-text parallax-nav") %>
+        <!-- <a href="/events/event_form" class="white-text parallax-nav">Book an Event Today!</a> -->
       </div>
     </div>
   </div>

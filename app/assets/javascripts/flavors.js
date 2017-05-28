@@ -58,7 +58,13 @@ document.addEventListener("DOMContentLoaded", function(){
      votes.push(flv[cnt].svy_vote)
     };
 
-    var options={};
+    var options={
+      legend: {
+        labels:{
+          fontSize: 25
+        }
+      }
+    };
     var svy_data = {
       labels: lbls,
       datasets: [{
