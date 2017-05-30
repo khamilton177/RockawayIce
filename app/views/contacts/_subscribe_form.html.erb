@@ -1,22 +1,33 @@
-<div id="cnt_sub_f">
-  <% if @contact.errors.full_messages.any? %>
-    <ul id="cnt_sub_err">
-      <% @contact.errors.full_messages.each do |error_message| %>
-      <li><%= error_message %>
-      </li> <br />
-      <% end %>
-    </ul>
-  <% end %>
-  <%= form_for @contact do |f| %>
-    <p>
-      <%= f.text_field :first_name, placeholder: "First Name" %>
-    </p>
-    <p>
-      <%= f.email_field :email, placeholder: "you@somewhere.com" %>
-    </p>
-    <p>
-      <%= f.text_field :mobile, placeholder: "10 digit mobile #" %>
-    </p>
-    <%= f.submit "Save", class: "subBtn" %>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col m1 l3">
+    </div>
+      <div class="cnt_f_div s12 m10 l6 center">
+        <% if @contact.errors.full_messages.any? %>
+          <ul id="cnt_sub_err">
+            <% @contact.errors.full_messages.each do |error_message| %>
+            <li><%= error_message %>
+            </li> <br />
+            <% end %>
+          </ul>
+        <% end %>
+          <%= form_for @contact, class: "cnt_sub_f" do |f| %>
+            <p class="cnt_f_p">
+              <%= label_tag(:loc, "First Name:", class: "cnt_f_lbl") %>
+              <%= f.text_field :first_name, required: true, class: "cnt_input" %>
+            </p>
+            <p class="cnt_f_p">
+              <%= label_tag(:loc, "Email:", class: "cnt_f_lbl") %>
+              <%= f.email_field :email, placeholder: "you@somewhere.com", required: true, class: "cnt_input" %>
+            </p>
+            <p class="cnt_f_p">
+              <%= label_tag(:loc, "Mobile:", class: "cnt_f_lbl") %>
+              <%= f.text_field :mobile, placeholder: "10 digit mobile #", required: true, class: "cnt_input cnt_input_mobile" %>
+            </p>
+            <%= f.submit "Save", class: "subBtn" %>
+          <% end %>
+        </div>
+      </div>
+  <div class="m1 l3">
+  </div>
 </div>
