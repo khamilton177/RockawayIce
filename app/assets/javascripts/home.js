@@ -13,15 +13,16 @@ document.addEventListener("DOMContentLoaded", function(){
   setInterval(nextSlide,4000);
   setInterval(driveCart,11000);
 
-    function nextSlide(){
-      // Encase attaching eventlistened in if statement to prevent js errors in console
-      if (slides.length > 0){
-        slides[currentSlide].className = "slide";
-        currentSlide = (currentSlide+1)%slides.length;
-        slides[currentSlide].className = "slide showing";
-      }
+  function nextSlide(){
+    // Encase attaching eventlistened in if statement to prevent js errors in console
+    if (slides.length > 0){
+      slides[currentSlide].className = "slide";
+      currentSlide = (currentSlide+1)%slides.length;
+      slides[currentSlide].className = "slide showing";
     }
+  }
 
+  // if (cartL !== null){
     function driveCart(){
       cartL.classList.add("fadeIn");
       cartL.style.opacity=1;
@@ -52,5 +53,5 @@ document.addEventListener("DOMContentLoaded", function(){
     // setTimeout(function(){
     //   cartL.style.opacity=0;
     // },8000);
-
+  // }
 });

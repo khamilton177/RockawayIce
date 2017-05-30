@@ -2,7 +2,9 @@
 // All this logic will automatically be available in application.js.
 // You can use CoffeeScript in this file: http://coffeescript.org/
 
-
+$(document).ready(function() {
+  $('select').material_select();
+});
 
 //  Friday Flavor Vote test to only show form during allowed voting days and times.
 document.addEventListener('DOMContentLoaded', cutOffVote);
@@ -32,7 +34,6 @@ function cutOffVote(){
     }
   }
 }
-
 
 // Pie Chart creation for results of Friday Flavor Vote
 document.addEventListener("DOMContentLoaded", function(){
@@ -82,3 +83,15 @@ document.addEventListener("DOMContentLoaded", function(){
     });
   }
 });
+
+//
+// document.addEventListener("DOMContentLoaded", function(){
+//   var select=document.querySelector("#flv_select");
+//   var vote=document.querySelector("#flv_vote");
+//   var voting=function (){
+//     var flavote=select.value;
+//     vote.setAttribute("name", flavote);
+//     vote.setAttribute("value", flavote);
+//   }
+//   select.addEventListener("click", voting);
+// });

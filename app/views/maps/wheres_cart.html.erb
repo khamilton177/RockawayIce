@@ -1,5 +1,14 @@
-<h3>Where's the Rockaway Ice Lady Cart?</h3>
-<%= content_tag "div", id: "map", data: {locations: Location.all} do %>
-<% end %>
-<!-- <div id="map"></div> -->
+<!-- <div class="container"> -->
+    <div class="row">
+      <h3 id="map-title" class="center">Where's the Rockaway Ice Lady Cart?</h3>
+
+      <div class="col m4 l2 left">
+        <%=image_tag("where.jpg", id: "map-where")%>
+      </div>
+      <div class="col s12 m8 l10 left">
+        <%= content_tag "div", id: "map", data: {locations: Location.all} do %>
+        <% end %>
+      </div>
+</div>
+<!-- </div> -->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_KEY"] %>&callback=initMap"></script>
