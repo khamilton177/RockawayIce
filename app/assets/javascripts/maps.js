@@ -14,7 +14,6 @@ function initMap(){
 
 
   var loc=$("#map").data("locations");
-  // var tlt;
   for(var cnt=0; cnt<loc.length; cnt++){
     var tip=loc[cnt].notes;
     //  strip city and st. from address
@@ -34,7 +33,9 @@ function initMap(){
           infowindow = new google.maps.InfoWindow({
             content: tipInfo
           });
-
+          logoMarker.addListener('click', function() {
+            infowindow.open(map, logoMarker);
+          });
         } else{
             console.log("No good"+ loc[cnt].address);
         }

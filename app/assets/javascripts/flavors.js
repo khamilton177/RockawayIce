@@ -84,14 +84,15 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 });
 
-//
 // document.addEventListener("DOMContentLoaded", function(){
 //   var select=document.querySelector("#flv_select");
-//   var vote=document.querySelector("#flv_vote");
-//   var voting=function (){
+//   console.log("select is- "+select);
+//   console.log("vote is- "+vote);
+//   var hidden=document.querySelector("#flavor_id");
+//   var voting=function(){
 //     var flavote=select.value;
-//     vote.setAttribute("name", flavote);
-//     vote.setAttribute("value", flavote);
+//     hidden.setAttribute("name", flavote);
+//     hidden.setAttribute("value", flavote);
 //   }
 //   select.addEventListener("click", voting);
 // });

@@ -2,35 +2,68 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// .about_cat_col{
-//   display: inline-block;
-// }
-//
-// h1, h3, .flv_notes{
-//   text-align: center;
-// }
-//
-
 .flv_first{
   color: #FF3AAE;
 }
-//
-.flv_f_btn{
+
+.flv_f_div{
+
 }
 
-.flv_vote_f{
-  // position: absolute;
-  // min-height: 500px;
+.flv_f{
+  font-size: 30px;
+  color: #0F0A0A !important;
 }
-//
-// .flv_f{
-//   // position: absolute;
-//   width: 100%;
-//   height: 100%;
-// }
 
-//
-// .flv_vote_cl{
-//   align-items: center;
-//   opacity: 0;
-// }
+#flavor_friday_form{
+  top: 35%;
+    opacity: 1;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+}
+
+.flv_f_p{
+  margin-left: 25%;
+}
+
+.flv_f_s{
+  display: inline-block;
+  margin-right: 75px;
+  width: 335px;
+}
+
+.flv_input{
+  color: #B9D61A;
+  font-size: 20px !important;
+}
+
+.flv_f_note{
+  font-size: 20px;
+  color: #FF3AAE;
+}
+
+.flv_cl_1{
+  color: #B9D61A;
+}
+
+.flv_cl_3{
+  color: #039be5;
+}
+
+.flv_f_lbl{
+  font-size: 25px !important;
+  color: #0F0A0A;
+}
+
+.subBtn{
+  background-color: #B9D61A !important;
+  color: #039be5 !important;
+}
+
+.flv_img{
+  background-color: #FFF600;
+}

@@ -1,60 +1,57 @@
 <div class="container">
-<div class="row">
-  <div class="col m1 l3">
-  </div>
-  <!-- <div class="s12 m8 l6"> -->
-    <div class="evt_f_div s12 m10 l6 center">
-      <%= form_tag("/events", id: "event_form", class: "evt_f", method: :post) do %>
-      <span class=evt_f_note><em>* All Fields Required</em></span>
-      <p class="evt_f_p">
-        <span class="evt_f_s">
-          <%= label_tag(:email, "Email:", class: "evt_f_lbl") %>
-          <%= email_field(:email, nil, required: true, class: "evt_input") %>
-        </span>
-        <span class="evt_f_s">
-          <%= label_tag(:phone, "Phone Number:", class: "evt_f_lbl") %>
-          <%= text_field_tag(:phone, nil, required: true, class: "evt_input") %>
-        </span>
-      </p>
-      <p class="evt_f_p">
-        <span class="evt_f_s">
-          <%= label_tag(:fname, "First Name:", class: "evt_f_lbl") %>
-          <%= text_field_tag(:fname, nil, required: true, class: "evt_input") %>
-        </span>
-        <span class="evt_f_s">
-          <%= label_tag(:lname, "Last Name:", class: "evt_f_lbl") %>
-          <%= text_field_tag(:lname, nil, required: true, class: "evt_input") %>
-        </span>
-      </p>
-      <p class="evt_f_p">
-        <%= label_tag(:date, "Event Date:", class: "evt_f_lbl") %>
-        <%= date_field(:date, nil, required: true, class: "evt_input") %>
-      </p>
-      <p class="evt_f_p">
-        <%= label_tag(:desc, "Please describe event:", class: "evt_f_lbl") %>
-      </p>
-      <p class="evt_f_p">
-        <%= text_area_tag(:desc, nil, required: true, size: "75x10") %>
-      </p>
-      <p class="evt_f_p">
-        <%= label_tag(:loc, "Event Location:", class: "evt_f_lbl") %>
-        <%= text_field_tag(:loc, nil, required: true, class: "evt_input") %>
-      </p>
-      <p class="evt_f_p">What type of packages are of interest to you?
-        <span class=evt_f_note><em> ...Please choose at least one.</em></span>
-      </p>
-      <p class="evt_f_p">
-        <%= check_box_tag(:ices) %>
-        <%= label_tag(:ices, "Rockaway Ice Lady", class: "evt_f_lbl") %>
-        <%= check_box_tag(:fire) %>
-        <%= label_tag(:fire, "Fire and Ice", class: "evt_f_lbl") %>
-      </p>
-      <p class="evt_f_btn">
-        <%= submit_tag("Submit", class: "subBtn") %>
-      </p>
-      <% end %>
+  <div class="row">
+    <div class="col m1 l2">
+    </div>
+      <div class="evt_f_div s12 m10 l8 center">
+        <%= form_tag("/events", id: "event_form", class: "evt_f", method: :post) do %>
+        <span class=evt_f_note><em>* All Fields Required</em></span>
+        <p class="evt_f_p">
+          <span class="evt_f_s">
+            <%= label_tag(:email, "Email:", class: "evt_f_lbl") %>
+            <%= email_field(:email, nil, required: true, class: "evt_input") %>
+          </span>
+          <span class="evt_f_s">
+            <%= label_tag(:phone, "Phone Number:", class: "evt_f_lbl") %>
+            <%= text_field_tag(:phone, nil, required: true, class: "evt_input") %>
+          </span>
+        </p>
+        <p class="evt_f_p">
+          <span class="evt_f_s">
+            <%= label_tag(:fname, "First Name:", class: "evt_f_lbl") %>
+            <%= text_field_tag(:fname, nil, required: true, class: "evt_input") %>
+          </span>
+          <span class="evt_f_s">
+            <%= label_tag(:lname, "Last Name:", class: "evt_f_lbl") %>
+            <%= text_field_tag(:lname, nil, required: true, class: "evt_input") %>
+          </span>
+        </p>
+        <p class="evt_f_p">
+          <%= label_tag(:date, "Event Date:", class: "evt_f_lbl") %>
+          <%= date_field(:date, nil, required: true, class: "evt_input") %>
+        </p>
+        <p class="evt_f_p">
+          <%= label_tag(:desc, "Please describe event:", class: "evt_f_lbl") %>
+        </p>
+        <p class="evt_f_p">
+          <%= text_area_tag(:desc, nil, required: true, size: "75x10") %>
+        </p>
+        <p class="evt_f_p">
+          <%= label_tag(:loc, "Event Location:", class: "evt_f_lbl") %>
+          <%= text_field_tag(:loc, nil, required: true, class: "evt_input") %>
+        </p>
+        <p class="evt_f_p">What type of packages are of interest to you?
+          <span class=evt_f_note><em> ...Please choose at least one.</em></span>
+        </p>
+        <p class="evt_f_p">
+          <%= check_box_tag(:ices) %>
+          <%= label_tag(:ices, "Rockaway Ice Lady", class: "evt_f_lbl") %>
+          <%= check_box_tag(:fire) %>
+          <%= label_tag(:fire, "Fire and Ice", class: "evt_f_lbl") %>
+        </p>
+          <%= submit_tag("Submit", class: "subBtn") %>
+        <% end %>
+      </div>
+    <div class="m1 l2">
     </div>
   </div>
-  <div class="m1 l3">
-</div>
 </div>
