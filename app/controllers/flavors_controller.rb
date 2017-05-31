@@ -31,7 +31,7 @@ before_action :generate_color
 
     #   flv_select=params[:id]
     #   @flavor=Flavor.find(flv_select)
-    
+
     vote=@flavor.svy_vote
     # incase the svy_vote field is NIL set to 1 to keep increment method from erroring
     if vote.nil?
