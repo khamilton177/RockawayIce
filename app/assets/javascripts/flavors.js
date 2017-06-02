@@ -64,6 +64,8 @@ document.addEventListener("DOMContentLoaded", function(){
     };
 
     var options={
+      responsive: true,
+      maintainAspectRatio: false,
       legend: {
         labels:{
           fontSize: 25
