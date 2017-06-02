@@ -27,7 +27,7 @@ class ContactsController < ApplicationController
         @welcome="Welcome #{@contact.first_name}!  Now you'll receive info on latest promos, events, and flavors.  Please reply 'STOP' if you did not make this request."
         @media=""
         # call Twilio API method to send welcome SMS to new subscriber
-        # add_cnt_notifyM(subscriberM, @welcome, @media)
+        add_cnt_notifyM(subscriberM, @welcome, @media)
       end
       # Build message for SendGrid API is subscriber supplied email
       unless @contact.email.nil? || @contact.email == ""
@@ -37,7 +37,7 @@ class ContactsController < ApplicationController
         @body="Get ready to receive info on latest promos, events, and flavors.  If you woud like to 'Unsubscribe', please click the link below-\n \n http://localhost:3000/contacts/#{@contact.id}/unsubscribe_form \n
         You need to supply this confirmation code- #{@unsub_conf_key}, to unsubscribe."
         # call mailer method to send welcome email to new subscriber via SendGrid
-        # SubscriberNotifierMailer.subscribed(@contact, @welcome, @body).deliver_now
+        SubscriberNotifierMailer.subscribed(@contact, @welcome, @body).deliver_now
       end
       redirect_to "/"
     else

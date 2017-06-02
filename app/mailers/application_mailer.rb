@@ -3,6 +3,6 @@ class ApplicationMailer < ActionMailer::Base
   include SendGrid
   require 'json'
 
-  default from: "kerryjae@gmail.com"
+  default from: "RockawayIceLady@gmail.com"
   layout 'mailer'
 end
