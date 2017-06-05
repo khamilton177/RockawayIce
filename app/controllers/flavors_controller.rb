@@ -20,17 +20,8 @@ before_action :generate_color
 
   def vote
     params.inspect
-
-    if params[:water] && params[:water] != ""
-      water=params[:water]
-      @flavor=Flavor.find(water)
-    else
-      creme=params[:cremes]
-      @flavor=Flavor.find(creme)
-    end
-
-    #   flv_select=params[:id]
-    #   @flavor=Flavor.find(flv_select)
+    flv_select=params[:flavor][:id]
+    @flavor=Flavor.find(flv_select)
 
     vote=@flavor.svy_vote
     # incase the svy_vote field is NIL set to 1 to keep increment method from erroring
@@ -38,9 +29,9 @@ before_action :generate_color
       vote=0
     end
 
-    puts "Vote before- #{vote}"
+    # puts "Vote before- #{vote}"
     vote+=1
-    puts "New vote count- #{vote}"
+    # puts "New vote count- #{vote}"
     @flavor.update(svy_vote: vote)
    redirect_to flavors_flavor_faves_path
  end

@@ -4,6 +4,10 @@
 
 $(document).ready(function() {
   $('select').material_select();
+  //  Materializes select doesn't pass value.  Using work around to pass value thrugh hidden field.
+  $('#flv_select').on('change', function() {
+    $('#flavor_id').val($('#flv_select').val());
+  });
 });
 
 //  Friday Flavor Vote test to only show form during allowed voting days and times.
@@ -83,16 +87,3 @@ document.addEventListener("DOMContentLoaded", function(){
     });
   }
 });
-
-// document.addEventListener("DOMContentLoaded", function(){
-//   var select=document.querySelector("#flv_select");
-//   console.log("select is- "+select);
-//   console.log("vote is- "+vote);
-//   var hidden=document.querySelector("#flavor_id");
-//   var voting=function(){
-//     var flavote=select.value;
-//     hidden.setAttribute("name", flavote);
-//     hidden.setAttribute("value", flavote);
-//   }
-//   select.addEventListener("click", voting);
-// });

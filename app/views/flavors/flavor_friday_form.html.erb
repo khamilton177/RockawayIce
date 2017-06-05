@@ -3,32 +3,38 @@
 </script>
 
 <div class="container">
-      <div class="row">
-        <div class="col m1 l2">
-        </div>
-        <div class="flv_f_div s12 m10 l8 center">
-          <div class="flv_vote_cl center">
-            <h1 class="flv_cl_1">Voting for this Friday is Closed</h1>
-            <h3 class="flv_cl_3">Voting resumes on Friday</h3>
-            <%=image_tag("girl_lick2.jpg", class: "flv_img")%>
-          </div>
-          <%= form_tag("/flavors", id: "flavor_friday_form", class: "flv_f", method: :post) do %>
-            <h3>Votes must be in by 5:00 pm Wednesday</h3>
-            <span class="flv_f_note">
-              ***Please select only 1 item from between the lists***
-            </span>
-            <p class="flv_f_p">
-              <span class="flv_f_s">Water Ices</span>
-              <%= select_tag "water", options_from_collection_for_select(@flavor_waters, "id", "name"), include_blank: true, class: "evt_input" %>
-            </p>
-            <p class="flv_f_p">
-              <span class="flv_f_s">Creme Ices</span>
-              <%= select_tag "cremes", options_from_collection_for_select(@flavor_cremes, "id", "name"), include_blank: true, class: "evt_input" %>
-            </p>
-          <%= submit_tag("Submit", class: "subBtn") %>
-        <% end %>
-      </div>
-      <div class="col m1 l2">
-      </div>
+  <div class="row">
+    <div class="col m1 l2">
     </div>
+    <div class="flv_f_div s12 m10 l8 center">
+      <div class="flv_vote_cl center">
+        <h1 class="flv_cl_1">Voting for this Friday is Closed</h1>
+        <h3 class="flv_cl_3">Voting resumes on Friday</h3>
+        <%=image_tag("girl_lick2.jpg", class: "flv_img")%>
+      </div>
+      <%= form_tag("/flavors", id: "flavor_friday_form", class: "flv_f", method: :post) do %>
+        <h1 class="center flv_cl_1">Votes must be in by 5:00 pm Wednesday</h1>
+        <h3 class="flv_cl_3">Rockaway Ice Lady Flavors</h3>
+        <select id="flv_select" class= "flv_input">
+          <optgroup label="Water Ices" class="flv_f_lbl">
+            <%= tag.option("", value: "") %>
+            <%=@flavor_waters.each do |f| %>
+              <%= tag.option("#{f.name}", value: "#{f.id}") %>
+              <% @cnt+=1 %>
+            <% end %>
+          </optgroup>
+          <optgroup label="Creme Ices">
+            <%=@flavor_cremes.each do |f| %>
+              <%= tag.option("#{f.name}", value: "#{f.id}") %>
+              <% @cnt+=1 %>
+            <% end %>
+          </optgroup>
+        </select>
+        <%= hidden_field(:flavor, :id) %>
+        <%= submit_tag("Submit", class: "subBtn") %>
+      <% end %>
+    </div>
+    <div class="col m1 l2">
+    </div>
+  </div>
 </div>
