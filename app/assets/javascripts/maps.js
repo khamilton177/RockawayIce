@@ -1,7 +1,7 @@
 function initMap(){
 
   var geoloc=new google.maps.Geocoder();
-  var logo = "/assets/favicon_32.png";
+  // var logo = "/assets/favicon_32.png";
   var street;
   var info;
   var marker="marker";
