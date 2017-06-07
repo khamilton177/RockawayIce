@@ -4,15 +4,15 @@ before_action :generate_color
 
 
   def about
-    @flavor_waters=Flavor.where(category_id: "1")
-    @flavor_cremes=Flavor.where(category_id: "2")
+    @flavor_waters=Flavor.where(category_id: "1").order(name: :asc)
+    @flavor_cremes=Flavor.where(category_id: "2").order(name: :asc)
   end
 
 
   def flavor_friday_form
     @categories=Category.where.not(id: "3")
-    @flavor_waters=Flavor.where(category_id: "1")
-    @flavor_cremes=Flavor.where(category_id: "2")
+    @flavor_waters=Flavor.where(category_id: "1").order(name: :asc)
+    @flavor_cremes=Flavor.where(category_id: "2").order(name: :asc)
     # respond_to do |format|
     #   format.js { render :js => "cutOffVote();" }
     # end

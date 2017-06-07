@@ -1,13 +1,12 @@
-<h1 class="center flv_first">
-  <%= link_to("#{@first.name} is in the lead...Not your favorite?  Better vote!", flavors_flavor_friday_form_path, class: "center flv_first") %>
-</h1>
+
 <div class="container">
-  <div class="section">
     <div class="row">
+      <h3 class="center flv_first">
+        <%= link_to("#{@first.name} is in the lead...Not your favorite?  Better vote!", flavors_flavor_friday_form_path, class: "center flv_first") %>
+      </h3>
       <div class="col s12 center">
         <%= content_tag "canvas", id: "myChart", width: "400", height: "400", data: {flavors: @flavors} do %>
         <% end %>
       </div>
     </div>
-  </div>
 </div>
