@@ -3,6 +3,7 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).ready(function(){
   $(".parallax").parallax();
+  $(".button-collapse").sideNav();
 });
 
 document.addEventListener("DOMContentLoaded", function(){
