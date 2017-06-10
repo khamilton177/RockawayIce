@@ -16,14 +16,13 @@
 }
 
 #flavor_friday_form{
-  top: 35%;
-    opacity: 1;
-    position: absolute;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 70%;
+  opacity: 1;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 70%;
 }
 
 .flv_f_p{
@@ -48,10 +47,12 @@
 
 .flv_cl_1{
   color: #B9D61A;
+  font-weight: bold;
 }
 
 .flv_cl_3{
   color: #039be5;
+  font-weight: bold;
 }
 
 .flv_f_lbl{
@@ -68,4 +69,16 @@
   width: 30%;
   height: 30%;
   background-color: #FFF600;
+}
+
+@media only screen and (min-width : 0px) {
+  #flavor_friday_form{
+    top: 10%;
+  }
+}
+
+@media only screen and (min-width : 990px) {
+  #flavor_friday_form{
+    top: 35%;
+  }
 }

@@ -18,6 +18,8 @@ nav .brand-logo {
 
 .side-nav li > a{
   color: #B9D61A;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 p {

@@ -41,6 +41,9 @@
               <%= link_to("Subscribe", new_contact_path, class: "nav") %>
             </li>
             <li>
+              <%= link_to("The Flavors", flavors_about_path, class: "nav") %>
+            </li>
+            <li>
               <%= link_to("Where's the Cart", maps_wheres_cart_path, class: "nav") %>
             </li>
             <li>
@@ -50,7 +53,7 @@
               <%= link_to("Favorite Flavor Friday", flavors_flavor_friday_form_path, method: :get, class: "nav") %>
             </li>
             <li>
-              <%= link_to("Which Flavors Have the Vote", flavors_flavor_faves_path, class: "nav", remote: :true) %>
+              <%= link_to("Trending Flavors", flavors_flavor_faves_path, class: "nav") %>
             </li>
           </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
