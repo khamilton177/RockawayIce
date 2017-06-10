@@ -15,7 +15,7 @@ function initMap(){
   for(var cnt=0; cnt<loc.length; cnt++){
     //  Note field may contain more specific location info
     var note=loc[cnt].notes;
-    //  Convert address to LatLong
+    //  Convert address to LatLong.  Geocoder function is wrapped to retain iterated note info.
     (function(note){geoloc.geocode(
       {'address': loc[cnt].address},
       function(results, status){
@@ -26,8 +26,10 @@ function initMap(){
           } else{
             info=note;
           }
+          /*  Capture current marker information.
+          Necessary because info is lost before infowindow is created */
           marker+=cnt;
-          // console.log("This is info-"+ info);
+          //  Set current marker information to variable used to create marker on map.
           var logoMarker=marker;
           //  Create custom marker and place it on map
           logoMarker = new google.maps.Marker({

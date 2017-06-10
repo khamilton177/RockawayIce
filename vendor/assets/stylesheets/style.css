@@ -16,6 +16,10 @@ nav .brand-logo {
   color: white;
 }
 
+.side-nav li > a{
+  color: #B9D61A;
+}
+
 p {
   line-height: 2rem;
 }
