@@ -2,20 +2,15 @@ class FlavorsController < ApplicationController
 
 before_action :generate_color
 
-
   def about
     @flavor_waters=Flavor.where(category_id: "1").order(name: :asc)
     @flavor_cremes=Flavor.where(category_id: "2").order(name: :asc)
   end
 
-
   def flavor_friday_form
     @categories=Category.where.not(id: "3")
     @flavor_waters=Flavor.where(category_id: "1").order(name: :asc)
     @flavor_cremes=Flavor.where(category_id: "2").order(name: :asc)
-    # respond_to do |format|
-    #   format.js { render :js => "cutOffVote();" }
-    # end
   end
 
   def vote
@@ -34,12 +29,19 @@ before_action :generate_color
     # puts "New vote count- #{vote}"
     @flavor.update(svy_vote: vote)
    redirect_to flavors_flavor_faves_path
- end
+  end
 
   def flavor_faves
     @flavors=Flavor.all
     @flavors=@flavors.order(svy_vote: :desc).limit(5)
     @first=@flavors.first
+  end
+
+  def reset_survey
+    Flavor.all.each do |flv|
+      flv.update(svy_vote: 0)
+    end
+    # SubscriberNotifierMailer.request_event(@requester_email, @subject, @body).deliver_now
   end
 
   private
@@ -62,14 +64,6 @@ before_action :generate_color
       @p_colors.push(color)
       @cnt=1
     end
-  end
-
-
-  def reset_survey
-    Flavor.all.each do |flv|
-      flv.update(svy_vote: 0)
-    end
-    # SubscriberNotifierMailer.request_event(@requester_email, @subject, @body).deliver_now
   end
 
 end
