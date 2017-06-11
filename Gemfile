@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 
@@ -74,5 +73,5 @@ gem "twilio-ruby"
 # SendGrid gem to add email support to app
 gem "sendgrid-ruby"
 
-# Charts.js gem to render chart for Flavor Friday vote_time
-# gem 'chart-js-rails'
+# Using to run weekly vote task
+gem 'whenever', :require => false

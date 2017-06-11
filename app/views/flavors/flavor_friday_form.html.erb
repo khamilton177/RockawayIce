@@ -12,11 +12,11 @@
         <%=image_tag("girl_lick2.jpg", class: "flv_img")%>
       </div>
       <%= form_tag("/flavors", id: "flavor_friday_form", class: "flv_f", method: :post) do %>
-        <h1 class="center flv_cl_1">Votes must be in by 5:00 pm Wednesday</h1>
+        <h2 class="center flv_cl_1">Voting ends every Wednesday @ 5:00 pm</h2>
         <h3 class="flv_cl_3">Rockaway Ice Lady Flavors</h3>
         <select id="flv_select" class= "flv_input">
+          <%= tag.option("", value: "") %>
           <optgroup label="Water Ices" class="flv_f_lbl">
-            <%= tag.option("", value: "") %>
             <%=@flavor_waters.each do |f| %>
               <%= tag.option("#{f.name}", value: "#{f.id}") %>
               <% @cnt+=1 %>

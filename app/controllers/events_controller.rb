@@ -8,7 +8,6 @@ class EventsController < ApplicationController
 
   def request_event
     params.inspect
-    puts "IM AT REQUEST EVENT"
     @requester_email=params[:email]
     requester_fname=params[:fname]
     requester_lname=params[:lname]
@@ -27,6 +26,11 @@ class EventsController < ApplicationController
       evt_pkg_fire="Fire"
     end
 
+    if !params[:ices] && !params[:fire]
+      flash[:alert] = "Please select an event package"
+      render :event_form
+    else
+
     @subject="New Event Request for #{evt_date}"
     @body="Contact- #{requester_fname.capitalize} #{requester_lname.capitalize}\n
                 Phone- #{requester_phone}\n
@@ -37,6 +41,7 @@ class EventsController < ApplicationController
     # call mailer method to send Event Request email to RockawayIceLady via SendGrid
     SubscriberNotifierMailer.request_event(@requester_email, @subject, @body).deliver_now
     redirect_to "/"
+  end
   end
 
   private

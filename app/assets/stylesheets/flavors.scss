@@ -4,6 +4,7 @@
 
 .flv_first{
   color: #FF3AAE;
+  font-weight: bold;
 }
 
 .flv_vote_cl{
@@ -18,6 +19,7 @@
 #flavor_friday_form{
   opacity: 1;
   position: absolute;
+  top: 10%;
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -69,16 +71,4 @@
   width: 30%;
   height: 30%;
   background-color: #FFF600;
-}
-
-@media only screen and (min-width : 0px) {
-  #flavor_friday_form{
-    top: 10%;
-  }
-}
-
-@media only screen and (min-width : 990px) {
-  #flavor_friday_form{
-    top: 35%;
-  }
 }

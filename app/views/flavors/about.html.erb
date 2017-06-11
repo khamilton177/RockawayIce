@@ -7,13 +7,13 @@
     <div class="col s6">
       <h3 class="flv_cl_3">Water Ices<h3>
       <% @flavor_waters.each do |w| %>
-        <%= tag.p("#{w.name}", style: "color: #{@p_colors[@cnt]}") %>
+        <h4><%= tag.p("#{w.name}", style: "color: #{@p_colors[@cnt]}") %></h4>
         <% @cnt+=1 %>
       <% end %>
       <BR>
       <h3 class="flv_cl_3">Creme Ices<h3>
       <% @flavor_cremes.each do |c| %>
-      <%= tag.p("#{c.name}", style: "color: #{@p_colors[@cnt]}") %>
+      <h4><%= tag.p("#{c.name}", style: "color: #{@p_colors[@cnt]}") %></h4>
       <% @cnt+=1 %>
       <% end %>
     </div>
