@@ -23,7 +23,6 @@ class SubscriberNotifierMailer < ActionMailer::Base
 
   #  Sends confirmation email to user after filling out Book an Event form.
   def ack_event(cnt, subx, body)
-    puts "USER EMAIL IS #{cnt[0]}"
     @content=body
     @signature="Catch Me if You Can...Nae\nRockawayIceLady@gmail.com\n347-619-2421"
     @content+=@signature
