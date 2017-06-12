@@ -19,7 +19,7 @@
 
 # Learn more: http://github.com/javan/whenever
 
-# every :wednesday, :at => '5:05 pm' do
-every :saturday, :at => '10:35 pm' do
-  runner "FlavorsController.new.reset_survey", :environment => 'production' ,:output => 'cron.log'
+#  This is for Development only.  Production schedule runs via Heroku Scheduler
+every :wednesday, :at => '5:05 pm' do
+  rake "promotions:reset_survey", :environment => 'development' ,:output => 'cron.log'
 end

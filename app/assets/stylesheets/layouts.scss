@@ -54,3 +54,23 @@ html body{
 .lay_foot_a{
   margin-right: 20px;
 }
+
+#notice {
+  background-color: #039be5;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+#alert {
+  background-color: #FF3AAE;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 2px;
+}

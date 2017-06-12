@@ -59,6 +59,16 @@
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
     </nav>
+      <% if flash.now[:notice] %>
+        <div id="notice">
+          <%= flash.now[:notice]%>
+        </div>
+      <% end %>
+      <% if flash.now[:alert] %>
+        <div id="alert">
+          <%= flash.now[:alert]%>
+        </div>
+      <% end %>
       <%= yield %>
     <footer class="page-footer acid-green">
       <div class="container">

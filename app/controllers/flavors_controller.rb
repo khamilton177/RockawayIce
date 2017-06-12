@@ -31,17 +31,11 @@ before_action :generate_color
    redirect_to flavors_flavor_faves_path
   end
 
+  #  Query applied to chart.js pie chart for Favorite Flavor Friday
   def flavor_faves
     @flavors=Flavor.all
     @flavors=@flavors.order(svy_vote: :desc).limit(5)
     @first=@flavors.first
-  end
-
-  def reset_survey
-    Flavor.all.each do |flv|
-      flv.update(svy_vote: 0)
-    end
-    # SubscriberNotifierMailer.request_event(@requester_email, @subject, @body).deliver_now
   end
 
   private

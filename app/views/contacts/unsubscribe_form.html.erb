@@ -1,10 +1,19 @@
-<div>
-
-<h3>Unsubscribe <%= @contact.email %></h3>
-
-<h5>Sorry to see you go.</h5>
-<p>Please verify that you want to remove <%= @contact.email %> from our mailing list</>
-
-  <%= link_to("Submit", unsubscribe_contact_path(@contact), method: :patch) %>
-
+<div class="container">
+  <div class="row">
+    <div class="col m1 l3">
+    </div>
+    <div class="cnt_f_div s12 m10 l6 center">
+      <%= form_tag(unsubscribe_contact_path(@contact), id: "unsubscribe", class: "center cnt_sub_f", method: :patch) do %>
+        <h3 class="center cnt_cl_3">Sorry to see you go.</h3>
+        <p class="center">Please verify that you want to remove <%= @contact.email %> from our mailing list</p>
+        <p class="cnt_f_p">
+          <%= label_tag(:unsub_code, "Please enter code supplied in email", class: "cnt_f_lbl") %>
+          <%= text_field_tag(:unsub_code, nil, required: true, class: "cnt_input_mobile cnt_input") %>
+        </p>
+        <%= submit_tag("Submit", class: "subBtn") %>
+      <% end %>
+    </div>
+    <div class="col m1 l3">
+    </div>
+  </div>
 </div>

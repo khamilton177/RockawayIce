@@ -15,7 +15,10 @@ class ContactsController < ApplicationController
   end
 
   def create
+    # Generate a 6 digit random number to confirm 'Unsubscribes'
+    @unsub_conf_key=100_000 + Random.rand(1_000_000 - 100_000)
     @contact = Contact.new(contact_params)
+    @contact.unsub_code=@unsub_conf_key.to_i
     unless contact_params[:mobile].nil? || contact_params[:mobile] == ""
       format_mobile=ActionController::Base.helpers.number_to_phone(contact_params[:mobile], delimeter: "", country_code: 1)
     end
@@ -32,10 +35,10 @@ class ContactsController < ApplicationController
       # Build message for SendGrid API is subscriber supplied email
       unless @contact.email.nil? || @contact.email == ""
         @welcome="Thanks for subscribing to RockawayIceLady!"
-        # Generate a 6 digit random number to confirm 'Unsubscribes'
-        @unsub_conf_key=100_000 + Random.rand(1_000_000 - 100_000)
-        @body="Get ready to receive info on latest promos, events, and flavors.  If you woud like to 'Unsubscribe', please click the link below-\n \n http://localhost:3000/contacts/#{@contact.id}/unsubscribe_form \n
-        You need to supply this confirmation code- #{@unsub_conf_key}, to unsubscribe."
+        @url="http://localhost:3000/contacts/#{@contact.id}/unsubscribe_form"
+        # @url="http://rockawayicelady.herokuapp.com/contacts/#{@contact.id}/unsubscribe_form"
+        @body="Get ready to receive info on latest promos, events, and flavors.  If you woud like to stop receiving emails, please click the link below-\n \n
+        #{@url}\n You need to supply this confirmation code- #{@unsub_conf_key}, to unsubscribe.\n"
         # call mailer method to send welcome email to new subscriber via SendGrid
         SubscriberNotifierMailer.subscribed(@contact, @welcome, @body).deliver_now
       end
@@ -49,13 +52,29 @@ class ContactsController < ApplicationController
   end
 
   def unsubscribe_form
-    @contact=Contact.find(params[:id])
+    @contact=Contact.find_by_id(params[:id])
+    if @contact.nil?
+      flash.now[:alert] = "Sorry, that user is not subscribed."
+      render "home/index"
+    end
   end
 
   def unsubscribe
+    params.inspect
     @contact=Contact.find(params[:id])
-    puts "I'm here!"
-    redirect_to "/"
+    if params[:unsub_code].to_i == @contact.unsub_code
+      @contact.update(email: "")
+      if @contact.save
+        flash.now[:notice] = "You have successfully unsubscribed.  Don't be a stranger...and Catch Me if You Can!"
+        render "home/index"
+      else
+        flash.now[:alert] = "Oops!  Something went wrong.  Please try again later."
+        render :unsubscribe_form
+      end
+    else
+      flash.now[:alert] = "Invalid Code"
+      render :unsubscribe_form
+    end
   end
 
   def update
@@ -99,6 +118,6 @@ class ContactsController < ApplicationController
     end
 
     def contact_params
-      params.require(:contact).permit(:first_name, :email, :mobile)
+      params.require(:contact).permit(:first_name, :email, :mobile, :unsub_code)
     end
 end
