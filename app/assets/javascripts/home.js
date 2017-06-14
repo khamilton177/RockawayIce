@@ -4,9 +4,9 @@
 $(document).ready(function(){
   $(".parallax").parallax();
   $(".button-collapse").sideNav();
-});
+// });
 
-document.addEventListener("DOMContentLoaded", function(){
+// document.addEventListener("DOMContentLoaded", function(){
   var slides=document.querySelectorAll("#slides .slide");
   var cartL=document.querySelector("#home-cart-lnk");
   var cart=document.querySelector(".home-cart");
