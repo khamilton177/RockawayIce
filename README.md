@@ -42,7 +42,7 @@ Configuration-
 ** Using Heroku Scheduler for Weekly Rake Task
 
 Database initialization-
-Locations and Flavors db's 
+Locations and Flavors db's
 * rails db:seed
 
 #### Code for Generating Colors in Flavors List
@@ -50,8 +50,13 @@ In controller-
 
 ![image](https://cloud.githubusercontent.com/assets/26287145/26642823/38155e32-45fd-11e7-9909-0c0dcd6b64fa.png)
 
+In view-
 
-![image](https://cloud.githubusercontent.com/assets/26287145/26642082/81ffda20-45fa-11e7-8377-f66575bf04d5.png)
+![flavorerb](https://user-images.githubusercontent.com/26287145/27183708-99c5d4f2-51ad-11e7-969f-c7aa126c8fa9.png)
+
+Outcome-
+
+![flavors](https://user-images.githubusercontent.com/26287145/27184295-c5e4af98-51af-11e7-9a05-41df166e5b80.gif)
 
 ####  Code for Assigning Unsubscribe Code
 

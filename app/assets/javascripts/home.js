@@ -4,7 +4,6 @@
 $(document).ready(function(){
   $(".parallax").parallax();
   $(".button-collapse").sideNav();
-// });
 
 // document.addEventListener("DOMContentLoaded", function(){
   var slides=document.querySelectorAll("#slides .slide");
@@ -12,7 +11,6 @@ $(document).ready(function(){
   var cart=document.querySelector(".home-cart");
   var currentSlide = 0;
   setInterval(nextSlide,4000);
-  setInterval(driveCart,11000);
 
   function nextSlide(){
     // Encase attaching eventlistened in if statement to prevent js errors in console
@@ -25,38 +23,32 @@ $(document).ready(function(){
 
   // Encase attaching eventlistened in if statement to prevent js errors in console
   if (cartL && cartL != null){
-    function driveCart(){
+    var driveCart=function(){
       cartL.classList.add("fadeIn");
       cartL.style.opacity=1;
+      cart.classList.add("bounce");
       setTimeout(function(){
         cart.style.opacity=1;
-        cart.classList.add("bounce");
-      },1000);
+      },2000);
+      setTimeout(function(){
+        cart.classList.add("home-cartSpeed");
+        var cartSpeed=document.querySelector(".home-cartSpeed");
+        cartSpeed.addEventListener("animationend", function(event){
+          cart.classList.remove("bounce");
+          cart.classList.remove("lightSpeedOut");
+          cart.classList.remove("home-cartSpeed");
+          cart.style.opacity=0;
+          cartL.classList.remove("fadeIn");
+        });
+        cartSpeed.classList.add("lightSpeedOut");
+      },4000);
     }
-
-    cartL.addEventListener("animationend", function(event){
-      cartL.classList.remove("fadeIn");
-    });
-
-    cart.addEventListener("animationend", function(event){
-      cart.classList.remove("bounce");
-      setTimeout(function(){
-        cart.classList.add("lightSpeedOut");
-      },1000);
-    });
-
-    cart.addEventListener("animationend", function(event){
-      setTimeout(function(){
-        cart.classList.remove("lightSpeedOut");
-        cart.style.opacity=0;
-      },7000);
-    });
 
     window.addEventListener("scroll", function(){
       var offSet=window.pageYOffset;
       console.log("Your at "+ offSet);
-      if (offSet > 400){
-        // driveCart();
+      if (offSet > 950 && offSet < 1800){
+        driveCart();
       }
     });
   }

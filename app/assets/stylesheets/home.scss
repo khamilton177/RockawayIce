@@ -36,14 +36,32 @@
   font-size: 25px;
 }
 
+//  ORIGINAL
+// #home-cart-lnk{
+//   opacity: 0;
+//   -webkit-animation-ease: 7s;
+// }
+//
+// .home-cart{
+//   opacity: 0;
+//   -webkit-animation-duration: 7s;
+// }
+//  ORIGINAL END
+
 #home-cart-lnk{
   opacity: 0;
   -webkit-animation-ease: 7s;
+  -webkit-animation-duration: 7s;
+  // -webkit-animation-iteration-count: infinite;
 }
 
 .home-cart{
   opacity: 0;
-  -webkit-animation-duration: 7s;
+  -webkit-animation-delay: 3s;
+}
+
+.home-cartSpeed{
+  -webkit-animation-duration: 3s;
 }
 
 .emph{
