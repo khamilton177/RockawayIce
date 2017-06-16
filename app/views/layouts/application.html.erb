@@ -36,7 +36,6 @@
               <%= link_to("Book an Event", events_event_form_path, class: "nav") %>
             </li>
           </ul>
-
           <ul id="nav-mobile" class="side-nav">
             <li>
               <%= link_to("Subscribe", new_contact_path, class: "nav") %>
@@ -60,19 +59,21 @@
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
     </nav>
-      <% if flash.now[:notice] %>
-        <div id="notice">
-          <%= flash.now[:notice]%>
-        </div>
-      <% end %>
-      <% if flash.now[:alert] %>
-        <div id="alert">
-          <%= flash.now[:alert]%>
-        </div>
-      <% end %>
-      <%= yield %>
+    <main>
+    <% if flash.now[:notice] %>
+      <div id="notice">
+        <%= flash.now[:notice]%>
+      </div>
+    <% end %>
+    <% if flash.now[:alert] %>
+      <div id="alert">
+        <%= flash.now[:alert]%>
+      </div>
+    <% end %>
+    <%= yield %>
+    </main>
     <footer class="page-footer acid-green">
-      <div class="container">
+      <div class="my-foot-cnt container">
         <div class="row">
           <div class="col s12 center valign-wrapper">
             <span class="lay_foot_span white-text">Connect with Me</span>
