@@ -4,16 +4,13 @@
 
 <div class="container">
   <div class="row">
-    <div class="col m1 l2">
-    </div>
-    <div class="flv_f_div s12 m10 l8 center">
+    <h4 class="center flv_cl_2"></h4>
+    <div class="flv_f_div s12 m12 l2 center">
       <div class="flv_vote_cl center">
-        <h2 class="flv_cl_1">Voting for this Friday is Closed</h2>
         <%=image_tag("girl_lick2.jpg", class: "flv_img")%>
       </div>
       <%= form_tag("/flavors", id: "flavor_friday_form", class: "flv_f", method: :post) do %>
-        <h2 class="center flv_cl_1">Voting ends every Wednesday @ 5:00 pm</h2>
-        <h3 class="flv_cl_3">Rockaway Ice Lady Flavors</h3>
+        <h4 class="flv_cl_3">Rockaway Ice Lady Flavors</h4>
         <select id="flv_select" class= "flv_input">
           <%= tag.option("", value: "") %>
           <optgroup label="Water Ices" class="flv_f_lbl">
@@ -32,8 +29,6 @@
         <%= hidden_field(:flavor, :id) %>
         <%= submit_tag("Submit", class: "subBtn") %>
       <% end %>
-    </div>
-    <div class="col m1 l2">
     </div>
   </div>
 </div>
