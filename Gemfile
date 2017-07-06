@@ -75,3 +75,6 @@ gem "sendgrid-ruby"
 
 # Using to run weekly vote task
 gem 'whenever', :require => false
+
+# Adding Google OAuth for Admin portal authentication
+gem 'omniauth-google-oauth2'
