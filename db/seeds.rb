@@ -58,6 +58,7 @@
 #   ])
 
 # Admin.create([
-#   { username: "kayhami177", email: "kerryjae@gmail.com" super: "1"}
-#   # { username: "nae", email: "ndailey70@gmail.com" super: "0"}
+#   { username: "Kerry", email: "kerryjae@gmail.com" super: "1"},
+#   { username: "Nanonte", email: "ndailey70@gmail.com" super: "0"},
+#   # { username: "Nanonte", email: "rockawayicelady@gmail.com" super: "0"}
 # ])
