@@ -58,7 +58,7 @@
 #   ])
 
 # Admin.create([
-#   { username: "Kerry", email: "kerryjae@gmail.com" super: "1"},
-#   { username: "Nanonte", email: "ndailey70@gmail.com" super: "0"},
-#   # { username: "Nanonte", email: "rockawayicelady@gmail.com" super: "0"}
+  # { provider: "google_oauth2", uid: "", username: "Kerry", email: "kerryjae@gmail.com", super: "1"},
+#   # { provider: "google_oauth2", uid: "", username: "Nanonte", email: "ndailey70@gmail.com", super: "0"},
+#   # { provider: "google_oauth2", uid: "", username: "AppUser", email: "rockawayicelady@gmail.com", super: "0"}
 # ])
