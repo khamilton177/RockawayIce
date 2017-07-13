@@ -5,7 +5,7 @@
  *
  * Made By MaterializeCSS.com
  */
- html body{
+ html, body{
    font-family: 'Amatic SC', cursive;
    font-weight: bold;
  }
