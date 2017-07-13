@@ -74,3 +74,17 @@ html body{
   padding: 10px;
   border-radius: 2px;
 }
+
+#scroll-up{
+  border: none;
+  background-color: transparent;
+  color: rgba(132, 121, 150, 0.4);
+  outline-color: rgba(132, 121, 150, 0.6);
+}
+
+.scroll{
+  width: 10px;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+}
