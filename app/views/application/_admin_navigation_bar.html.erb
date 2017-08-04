@@ -1,0 +1,54 @@
+<nav class="acid-green" role="navigation">
+  <div class="nav-wrapper container">
+    <%= link_to("", root_path, id: "logo-container", class: "brand-logo nav") %>
+      <ul class="left hide-on-med-and-down">
+        <li>
+          <%= link_to("Admin Users", new_contact_path, class: "nav") %>
+        </li>
+        <li>
+          <%= link_to("Location", flavors_about_path, class: "nav") %>
+        </li>
+        <li>
+          <%= link_to("Flavors", maps_wheres_cart_path, class: "nav") %>
+        </li>
+        <li>
+          <%= link_to("Promos", flavors_flavor_friday_form_path, method: :get, class: "nav") %>
+        </li>
+        <% if current_user %>
+          <li>
+            Signed in as <%= current_user.username %>
+          </li>
+          <li>
+            <%= link_to "Sign out", signout_path, id: "sign_out", class: "nav" %>
+          </li>
+      <% else %>
+        <li>
+          <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
+        </li>
+      <% end %>
+      </ul>
+      <ul id="nav-mobile" class="side-nav">
+        <li>
+          <%= link_to("Admin Users", new_contact_path, class: "nav")%>
+        </li>
+        <li>
+          <%= link_to("Location", flavors_about_path, class: "nav") %>
+        </li>
+        <li>
+          <%= link_to("Flavors", maps_wheres_cart_path, class: "nav") %>
+        </li>
+        <li>
+          <%= link_to("Promos", flavors_flavor_friday_form_path, method: :get, class: "nav") %>
+        </li>
+        <% if current_user %>
+          <li>
+            Signed in as <%= current_user.username %>
+          </li>
+          <li>
+            <%= link_to "Sign out", signout_path, id: "sign_out", class: "nav" %>
+          </li>
+      <% end %>
+      </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+</nav>

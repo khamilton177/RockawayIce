@@ -1,29 +1,37 @@
-<div class="container">
+<!-- <div class="tab-container">
   <div class="row">
-    <div class="col m1 l3">
-    </div>
-    <div class="cnt_f_div s12 m10 l6 center">
-      <% if current_user %>
-        <h2>Signed in as <strong><%= current_user.username %></strong>!</h2>
-
-        <%= link_to "Sign out", signout_path, id: "sign_out" %>
-        <div class="row">
-        <div class="col s12">
+    <div class="cnt_f_div s12 m12 l12 center"> -->
+    <% if current_user %>
+      <!-- <div class="row">
+        <div class="col s12"> -->
           <ul class="tabs">
-            <li class="tab col s3"><a href="#test1">Admins</a></li>
-            <li class="tab col s3"><a class="active" href="#test2">Flavors</a></li>
-            <li class="tab col s3"><a href="#test3">Locations</a></li>
+            <li class="tab col s3"><a href="#admins">Admins</a></li>
+            <li class="tab col s3"><a class="active" href="#flavors">Flavors</a></li>
+            <li class="tab col s3"><a href="#locations">Locations</a></li>
           </ul>
+        <!-- </div> -->
+        <div id="admins" class="col s12">
+          <% @admins.each do |admin| %>
+            <%= tag.p(admin.username, class: "para-rows") %>
+          <% end %>
         </div>
-        <div id="test1" class="col s12">Test 1</div>
-        <div id="test2" class="col s12">Test 2</div>
-        <div id="test3" class="col s12">Test 3</div>
-      </div>
-      <% else %>
+        <div id="flavors" class="col s12">
+          <% @flavors.each do |flave| %>
+            <%= tag.p(class: "para-rows") do %>
+              <%= flave.name %>
+              <%= link_to("Edit", edit_flavor_path(flave.id), remote: true) %>
+            <% end %>
+          <% end %>
+        </div>
+        <div id="locations" class="col s12">
+          <% @locations.each do |loc| %>
+            <%= tag.p(loc.address, class: "para-rows") %>
+          <% end %>
+        </div>
+      <!-- </div> -->
+    <% else %>
         <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
-      <% end %>
-    </div>
-    <div class="m1 l3">
-    </div>
+    <% end %>
+    <!-- </div>
   </div>
-</div>
+</div> -->

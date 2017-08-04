@@ -18,7 +18,7 @@ function cutOffVote(){
   var vote_cl_h2 = document.querySelector(".flv_cl_2");
   var fri_form = document.querySelector("#flavor_friday_form");
 
-  console.log(fri_form);
+  // console.log(fri_form);
 
   var vote_time=new Date();
   var dayNow=vote_time.getDay();

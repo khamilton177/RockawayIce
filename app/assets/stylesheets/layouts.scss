@@ -21,9 +21,15 @@ html body{
  #logo-container{
   width: 75px;
   height: 75px;
+  margin: 0 20px;
   background-image: image-url("logo_icon.jpg");
   background-size: cover;
   border: none;
+}
+
+#sign_out{
+  color: #FF3AAE;
+  text-decoration: underline;
 }
 
 .acid-green {
@@ -44,6 +50,10 @@ html body{
   height: 90px;
   line-height: 90px;
   font-size: 20px;
+}
+
+.lay_footer_row{
+  margin-bottom: 0 !important;
 }
 
 .lay_foot_span{
@@ -76,10 +86,12 @@ html body{
 }
 
 #scroll-up{
-  border: none;
-  background-color: transparent;
-  color: rgba(132, 121, 150, 0.4);
-  outline-color: rgba(132, 121, 150, 0.6);
+  width: 32px;
+  height: 32px;
+  border-color: #B9D61A;
+  background-image: image-url("ice_up.ico");
+  background-size: cover;
+  opacity: .5;
 }
 
 .scroll{

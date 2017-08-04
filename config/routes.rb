@@ -19,15 +19,20 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'sessions/create'
     get 'sessions/destroy'
+    get 'portal', to: 'admins#index'
+
   end
 
   get 'flavors/about'
   get 'flavors/flavor_friday_form'
   post '/flavors', to: 'flavors#vote'
   get 'flavors/flavor_faves'
+  get '/flavors/:id/edit', to: 'flavors#edit', as: :edit_flavor
 
   get 'home/index'
   root to: 'home#index'
+  get 'home/download_card'
+  get 'home/commercial'
 
   get 'maps/wheres_cart'
 
@@ -38,5 +43,6 @@ Rails.application.routes.draw do
   patch '/contacts/:id/unsubscribe', to: 'contacts#unsubscribe', as: :unsubscribe_contact
   resources :contacts
 
+  get '*unmatched_route', to: 'application#raise_not_found'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

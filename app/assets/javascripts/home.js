@@ -46,7 +46,7 @@ $(document).ready(function(){
 
     window.addEventListener("scroll", function(){
       var offSet=window.pageYOffset;
-      console.log("Your at "+ offSet);
+      // console.log("Your at "+ offSet);
       if (offSet > 950 && offSet < 1800){
         driveCart();
       }

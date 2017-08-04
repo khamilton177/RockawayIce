@@ -13,9 +13,11 @@
   <div class="section">
     <div class="row">
       <div class="col s12 center acid-green-text home-text-sz">
-        <h3>Rockaway's Home for Individually Handcrafted Italian Ices</h3>
-        <p class="center-align">Unique flavors such as Arnold Palmer, Cookie Monster, Caribbean Rainbow and more!</p>
-        <p class="center-align"><h4 class="emph animated infinite bounce">Adult</h4> flavors available.</p>
+        <%= link_to (flavors_about_path) do %>
+          <h3 class="acid-green-text">Rockaway's Home for Individually Handcrafted Italian Ices</h3>
+          <p class="center-align acid-green-text">Unique flavors such as Arnold Palmer, Cookie Monster, Caribbean Rainbow and more!</p>
+          <p class="center-align acid-green-text"><h4 class="emph acid-green-text animated infinite bounce">Adult</h4> <span class="acid-green-text">flavors available.</span>
+        <% end %>
       </div>
     </div>
   </div>
@@ -25,7 +27,7 @@
   <div class="section no-pad-bot">
     <div class="container">
       <div class="row center">
-        <h2><%= link_to("Come Explore the Flavors!", flavors_about_path, class: "parallax-nav")%></h2>
+        <h2><%= link_to("Get Your Loyalty Card Now!", home_download_card_path, rel: "noreferrer", class: "parallax-nav")%></h2>
       </div>
     </div>
   </div>
@@ -57,22 +59,19 @@
 
 <div class="container">
   <div class="section">
-    <!--   Icon Section   -->
+    <!--   Slide Show   -->
     <div class="row">
       <div class="col s12 m2">
       </div>
       <div class="col s12 m8">
-          <div id="slides" class="col s12">
-
-            <h2 id="slide1" class="slide showing"><BR><%= link_to("Favorite Flavor Friday is Coming...", flavors_flavor_friday_form_path, class: "white-text parallax-nav") %></h2>
-
-            <h2 id="slide2" class="slide"><BR><%= link_to("Vote for Yours Today!", flavors_flavor_friday_form_path, class: "white-text parallax-nav") %></h2>
-
-            <h2 id="slide3" class="slide"><BR><%= link_to("See Which Flavors are Trending", flavors_flavor_faves_path, class: "white-text parallax-nav") %></h2>
+        <div id="slides" class="col s12">
+          <h2 id="slide1" class="slide showing"><BR><%= link_to("Favorite Flavor Friday is Coming...", flavors_flavor_friday_form_path, class: "white-text parallax-nav") %></h2>
+          <h2 id="slide2" class="slide"><BR><%= link_to("Vote for Yours Today!", flavors_flavor_friday_form_path, class: "white-text parallax-nav") %></h2>
+          <h2 id="slide3" class="slide"><BR><%= link_to("See Which Flavors are Trending", flavors_flavor_faves_path, class: "white-text parallax-nav") %></h2>
+          <h2 id="slide4" class="slide"><BR><%= link_to("Get Your Loyalty Card Now!", home_download_card_path, rel: "noreferrer", class: "white-text parallax-nav") %></h2>
         </div>
       </div>
       <div class="col s12 m2">
-        </div>
       </div>
     </div>
   </div>
@@ -93,8 +92,8 @@
   <div class="section">
     <div class="row">
       <div class="col s12 center">
-        <h3 class="acid-green-text">Meet the Rockaway Ice Lady</h3>
-        <p class="left-align light"></p>
+        <h3><%=link_to("Meet the Rockaway Ice Lady", home_commercial_path, class: "acid-green-text")%></h3>
+        <!-- <p class="left-align light"></p> -->
       </div>
     </div>
   </div>

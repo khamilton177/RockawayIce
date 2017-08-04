@@ -26,6 +26,10 @@ nav .brand-logo {
   color: white;
 }
 
+.nav-wrapper{
+  position: static !important;
+}
+
 .side-nav li > a{
   color: #B9D61A;
   font-weight: bold;
@@ -86,6 +90,24 @@ p {
 }
 .icon-block .material-icons {
   font-size: inherit;
+}
+
+.tabs{
+  background-color: transparent;
+  border-bottom:   solid 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tabs .tab a {
+  color: grey;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+  color: black;
+}
+
+.tabs .indicator{
+  background-color: grey;
 }
 
 footer.page-footer {

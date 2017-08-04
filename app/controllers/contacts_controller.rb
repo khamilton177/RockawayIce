@@ -35,8 +35,8 @@ class ContactsController < ApplicationController
       # Build message for SendGrid API is subscriber supplied email
       unless @contact.email.nil? || @contact.email == ""
         @welcome="Thanks for subscribing to RockawayIceLady!"
-        @url="http://localhost:3000/contacts/#{@contact.id}/unsubscribe_form"
-        # @url="http://rockawayicelady.herokuapp.com/contacts/#{@contact.id}/unsubscribe_form"
+        # @url="http://localhost:3000/contacts/#{@contact.id}/unsubscribe_form"
+        @url="http://rockawayicelady.herokuapp.com/contacts/#{@contact.id}/unsubscribe_form"
         @body="Get ready to receive info on latest promos, events, and flavors.  If you woud like to stop receiving emails, please click the link below-\n \n
         #{@url}\n You need to supply this confirmation code- #{@unsub_conf_key}, to unsubscribe.\n"
         # call mailer method to send welcome email to new subscriber via SendGrid
@@ -88,14 +88,14 @@ class ContactsController < ApplicationController
     def add_cnt_notifyM(subscriberM, welcome, media)
       # Get your Account Sid and Auth Token from twilio.com/user/account
       # Test Account
-      account_sid = ENV['TEST_TWIL_SID']
-      auth_token = ENV['TEST_TWIL_TKN']
-      bus_txt_num = '+15005550006'
+      # account_sid = ENV['TEST_TWIL_SID']
+      # auth_token = ENV['TEST_TWIL_TKN']
+      # bus_txt_num = '+15005550006'
 
       # Prod Account
-      # account_sid = ENV['TWIL_SID']
-      # auth_token = ENV['TWIL_TKN']
-      # bus_txt_num = '+13476190204'
+      account_sid = ENV['TWIL_SID']
+      auth_token = ENV['TWIL_TKN']
+      bus_txt_num = '+13476190204'
       # http_basic_authenticate_with username: account_sid, password: auth_token, except: :index
 
       # set up a client to talk to the Twilio REST API

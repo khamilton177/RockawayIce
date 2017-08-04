@@ -1,5 +1,9 @@
 class Admin::AdminsController < ApplicationController
+
   def index
+    @admins=Admin.all
+    @flavors=Flavor.all
+    @locations=Location.all
   end
 
   def show
@@ -19,4 +23,5 @@ class Admin::AdminsController < ApplicationController
 
   def destroy
   end
+
 end

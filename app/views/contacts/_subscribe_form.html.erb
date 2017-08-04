@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col m1 l3">
     </div>
-      <div class="cnt_f_div s12 m10 l6 center">
+      <div class="cnt_f_div col s12 m10 l6 center">
         <% if @contact.errors.full_messages.any? %>
           <ul id="cnt_sub_err">
             <% @contact.errors.full_messages.each do |error_message| %>
@@ -28,6 +28,6 @@
           <% end %>
         </div>
       </div>
-  <div class="m1 l3">
+  <div class="col m1 l3">
   </div>
 </div>

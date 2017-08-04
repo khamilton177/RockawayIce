@@ -3,6 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <title>Rockaway Ice Lady</title>
+    <link rel="shortcut icon" type="image/png" href="<%=asset_path("favicon_32.png")%>">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"> -->
@@ -12,7 +13,10 @@
     <script src="https://use.fontawesome.com/144ed3a5c7.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body class="<%= @body_class %>">
+  <body class="<%= controller.controller_name %>">
+  <% if current_user %>
+    <%= render "admin_navigation_bar" %>
+    <% else %>
     <nav class="acid-green" role="navigation">
       <div class="nav-wrapper container">
         <%= link_to("", root_path, id: "logo-container", class: "brand-logo right nav") %>
@@ -59,6 +63,7 @@
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
     </nav>
+  <% end %>
     <main>
     <% if flash.now[:notice] %>
       <div id="notice">
@@ -72,9 +77,9 @@
     <% end %>
     <%= yield %>
     </main>
-    <footer class="page-footer acid-green">
+    <footer class="acid-green">
       <div class="my-foot-cnt container">
-        <div class="row">
+        <div class="row lay_footer_row">
           <div class="col s12 center valign-wrapper">
             <span class="lay_foot_span white-text">Connect with Me</span>
             <a class="lay_foot_a right valign-wrapper" href="https://www.instagram.com/rockaway_ice_lady/" target="_blank"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
@@ -83,9 +88,9 @@
         </div>
       </div>
     </footer>
-    <div class="scroll">
-      <button id="scroll-up" type="button"><i class="fa fa-chevron-circle-up fa-2x" aria-hidden="true"></i></button>
-    </div>
+    <!-- <div class="scroll">
+      <button id="scroll-up" type="button" title="Scroll Up"></button>
+    </div> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
   </body>
 </html>
