@@ -25,39 +25,51 @@
               <%= link_to("Subscribe", new_contact_path, class: "nav") %>
             </li>
             <li>
+              <%= link_to("Book an Event", events_event_form_path, class: "nav") %>
+            </li>
+            <!-- <li>
+              <%= link_to("Get Loyal", home_download_card_path, class: "nav") %>
+            </li> -->
+            <li>
               <%= link_to("The Flavors", flavors_about_path, class: "nav") %>
             </li>
             <li>
               <%= link_to("Where's the Cart", maps_wheres_cart_path, class: "nav") %>
             </li>
             <li>
-              <%= link_to("Favorite Flavor Friday", flavors_flavor_friday_form_path, method: :get, class: "nav") %>
+              <%= link_to("Fave Flave Friday", flavors_flavor_friday_form_path, method: :get, class: "nav") %>
             </li>
             <li>
               <%= link_to("Trending Flavors", flavors_flavor_faves_path, class: "nav") %>
             </li>
-            <li>
-              <%= link_to("Book an Event", events_event_form_path, class: "nav") %>
-            </li>
+            <!-- <li>
+              <%= link_to("Meet Nae", home_commercial_path, class: "nav") %>
+            </li> -->
           </ul>
           <ul id="nav-mobile" class="side-nav">
             <li>
               <%= link_to("Subscribe", new_contact_path, class: "nav") %>
             </li>
             <li>
+              <%= link_to("Book an Event", events_event_form_path, class: "nav") %>
+            </li>
+            <li>
+              <%= link_to("Get Loyal", home_download_card_path, class: "nav") %>
+            </li>
+            <li>
               <%= link_to("The Flavors", flavors_about_path, class: "nav") %>
             </li>
             <li>
               <%= link_to("Where's the Cart", maps_wheres_cart_path, class: "nav") %>
             </li>
             <li>
-              <%= link_to("Book an Event", events_event_form_path, class: "nav") %>
-            </li>
-            <li>
-              <%= link_to("Favorite Flavor Friday", flavors_flavor_friday_form_path, method: :get, class: "nav") %>
+              <%= link_to("Fave Flave Friday", flavors_flavor_friday_form_path, method: :get, class: "nav") %>
             </li>
             <li>
               <%= link_to("Trending Flavors", flavors_flavor_faves_path, class: "nav") %>
+            </li>
+            <li>
+              <%= link_to("Meet Nae", home_commercial_path, class: "nav") %>
             </li>
           </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -77,13 +89,16 @@
     <% end %>
     <%= yield %>
     </main>
-    <footer class="acid-green">
+    <footer>
       <div class="my-foot-cnt container">
         <div class="row lay_footer_row">
-          <div class="col s12 center valign-wrapper">
-            <span class="lay_foot_span white-text">Connect with Me</span>
-            <a class="lay_foot_a right valign-wrapper" href="https://www.instagram.com/rockaway_ice_lady/" target="_blank"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
-            <a class="lay_foot_a right valign-wrapper"  href="https://www.facebook.com/rockawayicelady/" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
+          <div class="col s12 center">
+            <p class="lay_foot_span white-text">Connect with Me</p>
+            <p class="lay-social-wrap">
+              <a class="lay_foot_a" href="https://www.instagram.com/rockaway_ice_lady/" target="_blank"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
+              <a class="lay_foot_a"  href="https://www.facebook.com/rockawayicelady/" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
+            </p>
+            <p class="lay-copy white-text">© 2017 Kerry J. Hamilton All Rights Reserved</p>
           </div>
         </div>
       </div>

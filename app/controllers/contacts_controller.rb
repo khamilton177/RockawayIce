@@ -36,7 +36,7 @@ class ContactsController < ApplicationController
       unless @contact.email.nil? || @contact.email == ""
         @welcome="Thanks for subscribing to RockawayIceLady!"
         # @url="http://localhost:3000/contacts/#{@contact.id}/unsubscribe_form"
-        @url="http://rockawayicelady.herokuapp.com/contacts/#{@contact.id}/unsubscribe_form"
+        @url="http://www.rockawayicelady.com/contacts/#{@contact.id}/unsubscribe_form"
         @body="Get ready to receive info on latest promos, events, and flavors.  If you woud like to stop receiving emails, please click the link below-\n \n
         #{@url}\n You need to supply this confirmation code- #{@unsub_conf_key}, to unsubscribe.\n"
         # call mailer method to send welcome email to new subscriber via SendGrid
