@@ -22,3 +22,6 @@
 
 .byebug_history
 sendgrid.env
+
+# Ignore mp4 file because it is too large.  Add directly to Heroku master
+/public/videos/commercial.mp4
