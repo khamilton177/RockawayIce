@@ -88,6 +88,7 @@ p {
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
   font-size: inherit;
 }
@@ -112,4 +113,192 @@ p {
 
 footer.page-footer {
   margin: 0;
+}
+
+/*Override default teal color*/
+
+.picker__day--selected,
+.picker__day--selected:hover,
+.picker--focused .picker__day--selected {
+  background-color: #B9D61A;
+}
+
+.picker__close, .picker__today {
+  color: #B9D61A;
+}
+
+.teal.lighten-1 {
+  background-color: #B9D61A !important;
+}
+
+.teal-text.text-lighten-1 {
+  color: #B9D61A !important;
+}
+
+.collection .collection-item.active {
+  background-color: #B9D61A;
+}
+
+.collection a.collection-item {
+  color: #B9D61A;
+}
+
+.secondary-content {
+  color: #B9D61A;
+}
+
+.progress .indeterminate {
+  background-color: #B9D61A;
+}
+
+span.badge.new {
+  background-color: #B9D61A;
+}
+
+.btn, .btn-large {
+  background-color: #B9D61A;
+}
+
+.btn-floating {
+  background-color: #B9D61A;
+}
+
+.btn-floating:hover {
+  background-color: #B9D61A;
+}
+
+.fixed-action-btn .fab-backdrop {
+  background-color: #B9D61A;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+  color: #B9D61A;
+}
+
+.chips.focus {
+  border-bottom: 1px solid #B9D61A;
+  box-shadow: 0 1px 0 0 #B9D61A;
+}
+
+.chips .chip.selected {
+  background-color: #B9D61A;
+  color: #fff;
+}
+
+input:not([type]):focus:not([readonly]),
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=url]:focus:not([readonly]),
+input[type=time]:focus:not([readonly]),
+input[type=date]:focus:not([readonly]),
+input[type=datetime]:focus:not([readonly]),
+input[type=datetime-local]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
+input[type=number]:focus:not([readonly]),
+input[type=search]:focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #B9D61A;
+  box-shadow: 0 1px 0 0 #B9D61A;
+}
+
+input:not([type]):focus:not([readonly]) + label,
+input[type=text]:focus:not([readonly]) + label,
+input[type=password]:focus:not([readonly]) + label,
+input[type=email]:focus:not([readonly]) + label,
+input[type=url]:focus:not([readonly]) + label,
+input[type=time]:focus:not([readonly]) + label,
+input[type=date]:focus:not([readonly]) + label,
+input[type=datetime]:focus:not([readonly]) + label,
+input[type=datetime-local]:focus:not([readonly]) + label,
+input[type=tel]:focus:not([readonly]) + label,
+input[type=number]:focus:not([readonly]) + label,
+input[type=search]:focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label {
+  color: #B9D61A;
+}
+
+.input-field .prefix.active {
+  color: #B9D61A;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:before,
+[type="radio"].with-gap:checked + label:after {
+  border: 2px solid #B9D61A;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:after {
+  background-color: #B9D61A;
+}
+
+[type="checkbox"]:checked + label:before {
+  border-right: 2px solid #B9D61A;
+  border-bottom: 2px solid #B9D61A;
+}
+
+[type="checkbox"]:indeterminate + label:before {
+  border-right: 2px solid #B9D61A;
+}
+
+[type="checkbox"].filled-in:checked + label:after {
+  border: 2px solid #B9D61A;
+  background-color: #B9D61A;
+}
+
+[type="checkbox"].filled-in.tabbed:checked:focus + label:after {
+  background-color: #B9D61A;
+  border-color: #B9D61A;
+}
+
+.switch label input[type=checkbox]:checked + .lever:after {
+  background-color: #B9D61A;
+}
+
+input[type=range] + .thumb {
+  background-color: #B9D61A;
+}
+
+input[type=range] + .thumb .value {
+  color: #B9D61A;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background-color: #B9D61A;
+}
+
+input[type=range]::-moz-range-thumb {
+  background: #B9D61A;
+}
+
+input[type=range]::-ms-thumb {
+  background: #B9D61A;
+}
+
+.side-nav li > a.btn-floating:hover {
+  background-color: #B9D61A;
+}
+
+
+.spinner-layer {
+  border-color: #B9D61A;
+}
+
+.picker__date-display {
+  background-color: #B9D61A;
+}
+
+.picker__day.picker__day--today {
+  color: #B9D61A;
+}
+
+.picker__day--selected,
+.picker__day--selected:hover,
+.picker--focused .picker__day--selected {
+  background-color: #B9D61A;
+}
+
+.picker__close, .picker__today {
+  color: #B9D61A;
 }
